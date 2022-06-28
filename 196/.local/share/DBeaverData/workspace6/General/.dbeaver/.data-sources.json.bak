@@ -1,0 +1,42 @@
+{
+	"folders": {},
+	"connections": {
+		"postgres-jdbc-18045482011-6884eb785b6fb1f4": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "vzpvgutp",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "salt.db.elephantsql.com",
+				"port": "5432",
+				"database": "vzpvgutp",
+				"url": "jdbc:postgresql://salt.db.elephantsql.com:5432/vzpvgutp",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-show-template-db@": "false",
+					"@dbeaver-show-unavailable-db@": "false",
+					"show-database-statistics": "false",
+					"@dbeaver-read-all-data-types-db@": "false",
+					"@dbeaver-use-prepared-statements-db@": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

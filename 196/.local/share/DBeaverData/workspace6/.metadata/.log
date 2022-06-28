@@ -1,0 +1,1002 @@
+!SESSION 2022-04-20 10:48:56.725 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-20 10:49:03.686
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-04-20 10:49:14.364
+!MESSAGE 
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-04-20 11:43:12.999
+!MESSAGE Operation failed. Retry count remains = 1
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-04-20 11:43:12.999
+!MESSAGE SQL Error [08006]: An I/O error occurred while sending to the backend.
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-04-20 11:43:12.999
+!MESSAGE An I/O error occurred while sending to the backend.
+!STACK 0
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4852)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.SocketException: Connection timed out (Read failed)
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	... 17 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-04-20 11:43:12.999
+!MESSAGE Connection timed out (Read failed)
+!STACK 0
+java.net.SocketException: Connection timed out (Read failed)
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4852)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2022-04-25 09:56:42.460 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-25 09:56:49.395
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2022-04-25 15:48:09.585 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-25 15:48:49.566
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.053
+!MESSAGE Error reading schema relation statistics
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.194
+!MESSAGE An I/O error occurred while sending to the backend.
+!STACK 0
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:114)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeQuery(JDBCPreparedStatementImpl.java:233)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.collectObjectStatistics(PostgreSchema.java:597)
+	at org.jkiss.dbeaver.ui.navigator.database.StatisticsNavigatorNodeRenderer$StatReadJob.run(StatisticsNavigatorNodeRenderer.java:533)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.SocketException: Connection or outbound has closed
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(Unknown Source)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.base/java.io.BufferedOutputStream.flush(Unknown Source)
+	at org.postgresql.core.PGStream.flush(PGStream.java:665)
+	at org.postgresql.core.v3.QueryExecutorImpl.sendSync(QueryExecutorImpl.java:1470)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:321)
+	... 9 more
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.194
+!MESSAGE Connection or outbound has closed
+!STACK 0
+java.net.SocketException: Connection or outbound has closed
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(Unknown Source)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.base/java.io.BufferedOutputStream.flush(Unknown Source)
+	at org.postgresql.core.PGStream.flush(PGStream.java:665)
+	at org.postgresql.core.v3.QueryExecutorImpl.sendSync(QueryExecutorImpl.java:1470)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:321)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:114)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeQuery(JDBCPreparedStatementImpl.java:233)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.collectObjectStatistics(PostgreSchema.java:597)
+	at org.jkiss.dbeaver.ui.navigator.database.StatisticsNavigatorNodeRenderer$StatReadJob.run(StatisticsNavigatorNodeRenderer.java:533)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.344
+!MESSAGE Operation failed. Retry count remains = 1
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.344
+!MESSAGE SQL Error [08006]: An I/O error occurred while sending to the backend.
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.344
+!MESSAGE An I/O error occurred while sending to the backend.
+!STACK 0
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructLookupCache.reloadObject(JDBCStructLookupCache.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructLookupCache.refreshObject(JDBCStructLookupCache.java:78)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreTableBase.refreshObject(PostgreTableBase.java:253)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreTableReal.refreshObject(PostgreTableReal.java:225)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreTable.refreshObject(PostgreTable.java:452)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.lambda$0(DBNDatabaseNode.java:358)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.refreshNode(DBNDatabaseNode.java:356)
+	at org.jkiss.dbeaver.ui.navigator.actions.NavigatorHandlerRefresh$1.run(NavigatorHandlerRefresh.java:188)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.SocketException: Connection timed out (Read failed)
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	... 17 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.344
+!MESSAGE Connection timed out (Read failed)
+!STACK 0
+java.net.SocketException: Connection timed out (Read failed)
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructLookupCache.reloadObject(JDBCStructLookupCache.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructLookupCache.refreshObject(JDBCStructLookupCache.java:78)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreTableBase.refreshObject(PostgreTableBase.java:253)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreTableReal.refreshObject(PostgreTableReal.java:225)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreTable.refreshObject(PostgreTable.java:452)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.lambda$0(DBNDatabaseNode.java:358)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.refreshNode(DBNDatabaseNode.java:356)
+	at org.jkiss.dbeaver.ui.navigator.actions.NavigatorHandlerRefresh$1.run(NavigatorHandlerRefresh.java:188)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.347
+!MESSAGE Network is unreachable (connect failed)
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-04-27 11:44:30.347
+!MESSAGE Network is unreachable (connect failed)
+!STACK 0
+java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:231)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:95)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.access$100(Driver.java:62)
+	at org.postgresql.Driver$ConnectThread.run(Driver.java:375)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-02 12:13:35.490
+!MESSAGE Operation failed. Retry count remains = 1
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-02 12:13:35.595
+!MESSAGE SQL Error [08006]: An I/O error occurred while sending to the backend.
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-02 12:13:35.595
+!MESSAGE An I/O error occurred while sending to the backend.
+!STACK 0
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4852)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	... 17 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-05-02 12:13:35.595
+!MESSAGE Connection reset
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4852)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2022-05-03 09:43:07.758 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-03 09:43:16.832
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:34.891
+!MESSAGE Error reading property 'owner' from public
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:34.983
+!MESSAGE 
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:34.983
+!MESSAGE InvocationTargetException
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:223)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:172)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:363)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.jkiss.dbeaver.DBException: SQL Error [08003]: This connection has been closed.
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:139)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	... 15 more
+Caused by: org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:877)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:1734)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:428)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCConnectionImpl.prepareStatement(JDBCConnectionImpl.java:244)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:972)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:106)
+	... 20 more
+Root exception:
+org.jkiss.dbeaver.DBException: SQL Error [08003]: This connection has been closed.
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:139)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:223)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:172)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:363)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:877)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:1734)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:428)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCConnectionImpl.prepareStatement(JDBCConnectionImpl.java:244)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:972)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:106)
+	... 20 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:34.984
+!MESSAGE SQL Error [08003]: This connection has been closed.
+!STACK 0
+org.jkiss.dbeaver.DBException: SQL Error [08003]: This connection has been closed.
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:139)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:223)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:172)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:363)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:877)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:1734)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:428)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCConnectionImpl.prepareStatement(JDBCConnectionImpl.java:244)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:972)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:106)
+	... 20 more
+!SUBENTRY 4 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:34.984
+!MESSAGE This connection has been closed.
+!STACK 0
+org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:877)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:1734)
+	at org.postgresql.jdbc.PgConnection.prepareStatement(PgConnection.java:428)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCConnectionImpl.prepareStatement(JDBCConnectionImpl.java:244)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:972)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase$RoleCache.prepareObjectsStatement(PostgreDatabase.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:106)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:223)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract.getPropertyValue(PropertySourceAbstract.java:172)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:363)
+	at org.jkiss.dbeaver.ui.editors.entity.properties.TabbedFolderPageForm$6.evaluate(TabbedFolderPageForm.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:35.408
+!MESSAGE Operation failed. Retry count remains = 1
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:35.408
+!MESSAGE 
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:35.408
+!MESSAGE SQL Error [08006]: An I/O error occurred while sending to the backend.
+!STACK 0
+org.jkiss.dbeaver.model.sql.DBSQLException: SQL Error [08006]: An I/O error occurred while sending to the backend.
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:208)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract$PropertyValueLoadService.evaluate(PropertySourceAbstract.java:368)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract$PropertyValueLoadService.evaluate(PropertySourceAbstract.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	... 19 more
+Caused by: java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	... 25 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:35.408
+!MESSAGE An I/O error occurred while sending to the backend.
+!STACK 0
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract$PropertyValueLoadService.evaluate(PropertySourceAbstract.java:368)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract$PropertyValueLoadService.evaluate(PropertySourceAbstract.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	... 25 more
+!SUBENTRY 4 org.jkiss.dbeaver.model 4 0 2022-05-05 16:00:35.408
+!MESSAGE Connection reset
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.loadObjects(JDBCObjectCache.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:73)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCObjectCache.getAllObjects(JDBCObjectCache.java:1)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreUtils.getObjectById(PostgreUtils.java:147)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.getRoleById(PostgreDatabase.java:377)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreSchema.getOwner(PostgreSchema.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.lambda$0(ObjectPropertyDescriptor.java:397)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.runtime.properties.ObjectPropertyDescriptor.readValue(ObjectPropertyDescriptor.java:395)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract$PropertyValueLoadService.evaluate(PropertySourceAbstract.java:368)
+	at org.jkiss.dbeaver.runtime.properties.PropertySourceAbstract$PropertyValueLoadService.evaluate(PropertySourceAbstract.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:88)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:72)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2022-05-09 15:29:38.311 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-09 15:29:45.424
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2022-05-12 11:00:50.258 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-12 11:01:00.318
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 11:09:13.019
+!MESSAGE SQL Error [42P01]: ERROR: relation "table_name" does not exist
+
+Error position:
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 11:09:13.056
+!MESSAGE SQL Error [42P01]: ERROR: relation "table_name" does not exist
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-16 11:09:13.056
+!MESSAGE ERROR: relation "table_name" does not exist
+!STACK 0
+org.postgresql.util.PSQLException: ERROR: relation "table_name" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:575)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$1(SQLQueryJob.java:484)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:491)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:878)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:3515)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 11:09:36.317
+!MESSAGE SQL Error [42704]: ERROR: type "datatype" does not exist
+  Position: 35
+
+Error position: line: 6 pos: 34
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 11:09:36.317
+!MESSAGE SQL Error [42704]: ERROR: type "datatype" does not exist
+  Position: 35
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-16 11:09:36.317
+!MESSAGE ERROR: type "datatype" does not exist
+  Position: 35
+!STACK 0
+org.postgresql.util.PSQLException: ERROR: type "datatype" does not exist
+  Position: 35
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:575)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$1(SQLQueryJob.java:484)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:491)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:878)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:3515)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 11:10:16.641
+!MESSAGE SQL Error [42704]: ERROR: type "string" does not exist
+  Position: 35
+
+Error position: line: 6 pos: 34
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 11:10:16.641
+!MESSAGE SQL Error [42704]: ERROR: type "string" does not exist
+  Position: 35
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-16 11:10:16.641
+!MESSAGE ERROR: type "string" does not exist
+  Position: 35
+!STACK 0
+org.postgresql.util.PSQLException: ERROR: type "string" does not exist
+  Position: 35
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:575)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$1(SQLQueryJob.java:484)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:491)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:878)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:3515)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 11:12:00.265
+!MESSAGE SQL Error [42701]: ERROR: column "video_path" of relation "songs" already exists
+
+Error position:
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 11:12:00.265
+!MESSAGE SQL Error [42701]: ERROR: column "video_path" of relation "songs" already exists
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-16 11:12:00.265
+!MESSAGE ERROR: column "video_path" of relation "songs" already exists
+!STACK 0
+org.postgresql.util.PSQLException: ERROR: column "video_path" of relation "songs" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:575)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$1(SQLQueryJob.java:484)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:491)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:878)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:3515)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 15:46:25.834
+!MESSAGE Operation failed. Retry count remains = 1
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 15:46:25.850
+!MESSAGE SQL Error [08006]: An I/O error occurred while sending to the backend.
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-16 15:46:25.850
+!MESSAGE An I/O error occurred while sending to the backend.
+!STACK 0
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:350)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	... 17 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-05-16 15:46:25.850
+!MESSAGE Connection reset
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:161)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:128)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:113)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:443)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2057)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 16:59:42.411
+!MESSAGE Operation failed. Retry count remains = 1
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 16:59:42.411
+!MESSAGE SQL Error [57P01]: FATAL: terminating connection due to administrator command
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2022-05-16 16:59:42.411
+!MESSAGE FATAL: terminating connection due to administrator command
+!STACK 0
+org.postgresql.util.PSQLException: FATAL: terminating connection due to administrator command
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:329)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.lambda$0(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.utils.SecurityManagerUtils.wrapDriverActions(SecurityManagerUtils.java:94)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:131)
+	at org.jkiss.dbeaver.model.impl.jdbc.struct.JDBCTable.readData(JDBCTable.java:190)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:118)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:116)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2022-05-16 16:59:42.412
+!MESSAGE An I/O error occurred while sending to the backend.
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 17:26:43.262
+!MESSAGE ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(maitri.bhatt@volansys.com) already exists.
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 17:26:43.262
+!MESSAGE ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(maitri.bhatt@volansys.com) already exists.
+!STACK 0
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(maitri.bhatt@volansys.com) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	at org.jkiss.dbeaver.model.impl.data.ExecuteBatchImpl.executeStatement(ExecuteBatchImpl.java:310)
+	at org.jkiss.dbeaver.model.impl.data.ExecuteBatchImpl.processBatch(ExecuteBatchImpl.java:178)
+	at org.jkiss.dbeaver.model.impl.data.ExecuteBatchImpl.execute(ExecuteBatchImpl.java:81)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.executeStatements(ResultSetPersister.java:813)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.lambda$2(ResultSetPersister.java:698)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.executeStatements(ResultSetPersister.java:697)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.run(ResultSetPersister.java:635)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2022-05-16 17:26:49.626
+!MESSAGE ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(maitri.bhatt@volansys.com) already exists.
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2022-05-16 17:26:49.626
+!MESSAGE ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(maitri.bhatt@volansys.com) already exists.
+!STACK 0
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(maitri.bhatt@volansys.com) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.execute(JDBCPreparedStatementImpl.java:261)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCPreparedStatementImpl.executeStatement(JDBCPreparedStatementImpl.java:205)
+	at org.jkiss.dbeaver.model.impl.data.ExecuteBatchImpl.executeStatement(ExecuteBatchImpl.java:310)
+	at org.jkiss.dbeaver.model.impl.data.ExecuteBatchImpl.processBatch(ExecuteBatchImpl.java:178)
+	at org.jkiss.dbeaver.model.impl.data.ExecuteBatchImpl.execute(ExecuteBatchImpl.java:81)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.executeStatements(ResultSetPersister.java:813)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.lambda$2(ResultSetPersister.java:698)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:171)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.executeStatements(ResultSetPersister.java:697)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetPersister$DataUpdaterJob.run(ResultSetPersister.java:635)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2022-05-24 11:40:50.267 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-24 11:40:58.184
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2022-05-25 15:02:12.222 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-25 15:02:20.018
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2022-05-27 11:34:53.973 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-27 11:35:01.280
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2022-06-28 14:57:28.375 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.12
+java.vendor=Eclipse Foundation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-06-28 14:57:42.402
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
