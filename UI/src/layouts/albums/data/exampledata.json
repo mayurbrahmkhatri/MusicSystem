@@ -1,0 +1,403 @@
+[
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/d41WjznWPL/1Wjz8wynWP/size_m.jpg",
+        "title": "Pushpa The Rise",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/7rVW1aRWk5/VW1LG9Bg3k/size_xs_1639457383.webp",
+                "name": "Srivalli",
+                "movie": "Pushpa The rise",
+                "artist": "Javed Ali"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/a7LWBkzbzX/LWBlpGEJKz/size_xs_1639379973.webp",
+                "name": "Saami Saami",
+                "movie": "Pushpa The Rise",
+                "artist": "Sunidhi Chuahan"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/D0PKLrWGl9/PKLQX9Rq3G/size_xs_1639198130.webp",
+                "name": "Eyy Bidda Ye Mera Adda",
+                "movie": "Pushpa The Rise",
+                "artist": "Nakash Aziz"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/g4w3vr3jJB/4w3vZx683j/size_m_1543307373.jpg",
+        "title": "Kedarnath",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/g4w3vr3jJB/4w3vZx683j/size_m_1543307373.jpg",
+                "name": "Jaan Nishar",
+                "movie": "Kedarnath",
+                "artist": "Pritam"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/DwPKOxB3qV/PKOz2wAPbq/size_m_1542265739.webp",
+                "name": "Sweeetheart",
+                "movie": "KedarNath",
+                "artist": "Dev Negi"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/4Z9bqo3yQn/9bq9Ql6Xby/size_xs_1541417975.webp",
+                "name": "Namo Namo",
+                "movie": "KedarNath",
+                "artist": "Amit Trivedi"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/w4MKPObojg/MKPgJXMxbo/size_m_1632296599.jpg",
+        "title": "Shiddat",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/9En3pqeWXD/n3pErklEWX/size_xs_1632114615.webp",
+                "name": "Shiddat",
+                "movie": "Shiddat",
+                "artist": "Manana Bhardwaj"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/w4MKPObojg/MKPgJXMxbo/size_xs_1632296599.webp",
+                "name": "Barbaadiyan",
+                "movie": "Shiddat",
+                "artist": "Ankit Tiwari"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/4Z9bqo3yQn/9bqgBDP13y/size_m_1640343731.jpg",
+        "title": "Jersey",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/g4w3vr3jJB/w3v4Z6xjbj/size_xs_1638945309.webp",
+                "name": "Maiyya Mainu",
+                "movie": "Jersey",
+                "artist": "Sachet Tandon"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/4Z9bqo3yQn/9bqgBDP13y/size_xs_1640343731.webp",
+                "name": "Jind Meriye",
+                "movie": "M.S. Dhoni",
+                "artist": "Pritam"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/koMWQ7BKqL/MWQkxnPkKq/size_xs_1638431621.webp",
+                "name": "Mehram",
+                "movie": "Jersey",
+                "artist": "Sachet Tandon"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/R7vKX66Wmr/vKX64Ox6Wm/size_m_1645303288.jpg",
+        "title": "Gangubai Kathiawadi",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/R7vKX66Wmr/vKX64Ox6Wm/size_m_1645303288.jpg",
+                "name": "Meri Jaan",
+                "movie": "Gangubai Kathiawadi",
+                "artist": "Neeti Mohan"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/DwPKOkBKqV/PKOGvxlYKq/size_xs_1644987770.webp",
+                "name": "Dholida",
+                "movie": "Gangubai Kathiawadi",
+                "artist": "Shail Hada"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/0wrb4N3Lg7/rb4OA2EvWL/size_xs_1644987824.webp",
+                "name": "Jab Saiyaan",
+                "movie": "Gangubai Kathiawadi",
+                "artist": "Sherya Goshal"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/R7vKX66Wmr/vKX64Ox6Wm/size_xs_1645303288.webp",
+                "name": "Jhume Re Gori",
+                "movie": "Gangubai Kathiawadi",
+                "artist": "Dipti Rege"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/10q3Zj1352/q3ZR6q4035/size_m_1629048201.jpg",
+        "title": "Shershaah",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/lJvKa56KDV/vKa91Z1RKD/size_xs_1628085090.webp",
+                "name": "Raatan Lambiyan",
+                "movie": "Shershaah",
+                "artist": "Jubin Nautiyal"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/XYybzNrb2g/ybzEg61rW2/size_xs_1628084846.webp",
+                "name": "Ranjha",
+                "movie": "Shershaah",
+                "artist": "B Praak"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/7rVW1Rbk56/VW1L7Rxg3k/size_xs_1628958702.webp",
+                "name": "Mann Bharryaa 2.0",
+                "movie": "Shershaah",
+                "artist": "B Praak"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/9MAWe97WyJ/AWe9jEmDWy/size_m_1647281004.jpg",
+        "title": "RRR (Hindi)",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/6Zxb2r7b9w/xb2wdqoJK9/size_xs_1636542035.webp",
+                "name": "Naacho Naacho",
+                "movie": "RRR",
+                "artist": "Vishal Mishra"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/kGxbnw0Ky4/xbnam24qWy/size_xs_1636541507.webp",
+                "name": "Dosti",
+                "movie": "RRR",
+                "artist": "Amit Trivedi"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/XYybzrb2gz/ybzEv9ngW2/size_xs_1637927186.webp",
+                "name": "Janani",
+                "movie": "RRR",
+                "artist": "M. M. Keeravani"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/qa4WEkqKP1/4WEk64E5KP/size_m_1647933273.jpg",
+        "title": "Bachchhan Paandey",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/9En3peWXDV/n3pr8PVGbX/size_xs_1646105514.webp",
+                "name": "Maarkhayega",
+                "movie": "Bachchhan Pandey",
+                "artist": "Vikram Montrose"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/jBr3gLyWR1/r3gQNPzJbR/size_xs_1646105266.webp",
+                "name": "Meri Jaan Meri Jaan",
+                "movie": "Bachchhan Pandey",
+                "artist": "B Praak"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/YoEWlabzXB/EWlgx7DX3z/size_xs_1647056016.webp",
+                "name": "Heer Raanjhana",
+                "movie": "Bachchhan Pandey",
+                "artist": "Pritam"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/7rVW1Rbk56/rVW1nRL5bk/size_m.jpg",
+        "title": "Jab Harry Met Sejal",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/DwPKOBbqVZ/PKOQYzaqWq/size_xs_1516002119.webp",
+                "name": "Hawayein",
+                "movie": "Jab Harry Met Sejal",
+                "artist": "Pritam"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/jBr3gLyWR1/r3gAaZDybR/size_xs_1516001823.webp",
+                "name": "Radha",
+                "movie": "Jab Harry Met Sejal",
+                "artist": "Arijit Singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/10q3Zj1352/q3Z9kVN1K5/size_xs_1516001923.webp",
+                "name": "Beech Beech Mein",
+                "movie": "Jab Harry Met Sejal",
+                "artist": "Sunidhi Chauhan"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/w4MKPObojg/4MKPBBjjWo/size_m.jpg",
+        "title": "M.S. Dhoni",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/w4MKPObojg/4MKPBBjjWo/size_xs.webp",
+                "name": "Jab Tak",
+                "movie": "M.S. Dhoni",
+                "artist": "Armaan Malik"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/w4MKPObojg/4MKPBBjjWo/size_xs.webp",
+                "name": "Kaun Tujhe",
+                "movie": "M.S. Dhoni",
+                "artist": "Armaan Malik"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/w4MKPObojg/4MKPBBjjWo/size_xs.webp",
+                "name": "Phir Kabhi",
+                "movie": "M.S. Dhoni",
+                "artist": "Arijit Singh"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/D0PKLrWGl9/0PKLDnzwKG/size_m_1581694054.jpg",
+        "title": "Love Aaj Kal",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/7rVW1aRWk5/VW1epL5RWk/size_xs_1579686718.webp",
+                "name": "Shayad",
+                "movie": "Love Aaj Kal",
+                "artist": "Pritam"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/VdNW0JMKo5/NW05jOOpbo/size_xs_1580277626.webp",
+                "name": "Haan Mein Galat",
+                "movie": "Love Aaj Kal",
+                "artist": "Arijit Singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/oAJbDlbnL8/JbDyYnR0Kn/size_xs_1581517085.webp",
+                "name": "Rahogi Meri",
+                "movie": "Love Aaj Kal",
+                "artist": "Arijit Singh"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/EWlwZoMn3z/size_m_1638790602.jpg",
+        "title": "Atrangi Re",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/0wrb4qNKLg/rb4wDBGMWL/size_xs_1638769545.webp",
+                "name": "Rait Zara Si",
+                "movie": "Atrangi Re",
+                "artist": "Arijit Singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/2lV3d1WRgB/V3dDnzJZ3R/size_xs_1638153832.webp",
+                "name": "Chaka Chak",
+                "movie": "Atrangi Re",
+                "artist": "Shreya Ghoshal"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/EWlwZoMn3z/size_xs_1638790602.webp",
+                "name": "Tumhein Mohabbat Hai",
+                "movie": "Atrangi Re",
+                "artist": "Arijit Singh"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/10q3ZR1352/0q3ZzPm035/size_m.jpg",
+        "title": "Tamasha",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/10q3ZR1352/0q3ZzPm035/size_xs.webp",
+                "name": "Agar Tum Saath Ho",
+                "movie": "Tamasha",
+                "artist": "Arijit Singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/10q3ZR1352/0q3ZzPm035/size_xs.webp",
+                "name": "Safarnama",
+                "movie": "Tamasha",
+                "artist": "Lucky Ali"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/10q3ZR1352/0q3ZzPm035/size_xs.webp",
+                "name": "Matargasti",
+                "movie": "Tamasha",
+                "artist": "Mohit Chauhan"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/lJvKa56KDV/vKa1meQnKD/size_m_1630427115.jpg",
+        "title": "Bell Bottom",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/JD2KJyAbOL/2KJZ5BEnKO/size_xs_1629900109.webp",
+                "name": "Marjaawaan",
+                "movie": "Bell Bottom",
+                "artist": "Asees Kaur"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/81l3Me3rMx/l3M8Rrx6Kr/size_xs_1628929986.webp",
+                "name": "Tum Aaogey",
+                "movie": "Bell Bottom",
+                "artist": "Armaan Malik"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/lJvKa56KDV/vKa1meQnKD/size_xs_1630427115.webp",
+                "name": "Khair Mangde",
+                "movie": "Bell Bottom",
+                "artist": "Pratibha Singh"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/koMWQ4B3qL/oMWQO5LXKq/size_m.jpg",
+        "title": "Ae Dil Hai Mushkil",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/koMWQ4B3qL/oMWQO5LXKq/size_xs.webp",
+                "name": "Channa Mereya",
+                "movie": "Ae Dil Hai Mushkil",
+                "artist": "Arijit Singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/koMWQ4B3qL/oMWQO5LXKq/size_xs.webp",
+                "name": "The Breakup Song",
+                "movie": "Ae Dil Hai Mushkil",
+                "artist": "Arijit Singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/koMWQ4B3qL/oMWQO5LXKq/size_xs.webp",
+                "name": "Bulleya",
+                "movie": "Ae Dil Hai Mushkil",
+                "artist": "Arijit Singh"
+            }
+        ]
+    },
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/oEWlkgEY3z/size_m.jpg",
+        "title": "  ",
+        
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/oEWlkgEY3z/size_xs.webp",
+                "name": "Kala Chashma",
+                "movie": "Baar Baar Dekho",
+                "artist": "Amar Arshi"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/oEWlkgEY3z/size_xs.webp",
+                "name": "Sau Aasmaan",
+                "movie": "Baar Baar Dekho",
+                "artist": "Armaan Malik"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/oEWlkgEY3z/size_xs.webp",
+                "name": "Dariya",
+                "movie": "Baar Baar Dekho",
+                "artist": "Arko"
+            }
+        ]
+    }
+    
+]   

@@ -1,0 +1,131 @@
+{
+  "name": "ds-auth-proxy",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "eslint": "node_modules/.bin/eslint --max-warnings 2 --ext .js --f checkstyle . > eslint.xml",
+    "pretest": "npm run eslint",
+    "test": "node_modules/.bin/nyc node_modules/.bin/_mocha 'test/**/*.js' --timeout 10000 --exit",
+    "build": "node_modules/.bin/babel app --presets minify --copy-files -d build/app",
+    "generate-build-json": "node scripts/generateBuild.js app/"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "mocha": true,
+      "node": true
+    },
+    "extends": "airbnb-base",
+    "rules": {
+      "no-underscore-dangle": 0,
+      "no-param-reassign": 0,
+      "object-curly-newline": 0,
+      "no-console": 0,
+      "consistent-return": 0,
+      "camelcase": 0,
+      "require-jsdoc": 0,
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ],
+      "jsdoc/check-param-names": 2,
+      "jsdoc/check-tag-names": 2,
+      "jsdoc/check-types": 2,
+      "jsdoc/newline-after-description": 2,
+      "jsdoc/require-hyphen-before-param-description": 2,
+      "jsdoc/require-param": 2,
+      "jsdoc/require-param-name": 2,
+      "jsdoc/require-param-type": 2,
+      "jsdoc/require-returns-type": 2
+    },
+    "plugins": [
+      "jsdoc"
+    ]
+  },
+  "eslintIgnore": [
+    "coverage/**",
+    "reports/**",
+    "apidocs",
+    "node_modules",
+    "dist"
+  ],
+  "nyc": {
+    "exclude": [
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "cobertura",
+      "html",
+      "lcov",
+      "text-summary"
+    ],
+    "report-dir": "./reports"
+  },
+  "pre-commit": [
+    "eslint"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "babel-preset-minify": "^0.5.1",
+    "chai": "^4.2.0",
+    "claudia": "^5.4.2",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsdoc": "^3.3.0",
+    "mocha": "^9.2.2",
+    "node-mocks-http": "^1.8.0",
+    "nyc": "^15.1.0",
+    "pre-commit": "^1.2.2",
+    "proxyquire": "^1.8.0",
+    "sinon": "^4.5.0"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "ajv": "^6.10.0",
+    "ajv-keywords": "^3.4.0",
+    "aws-sdk": "^2.854.0",
+    "base-64": "^0.1.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "chai-http": "^4.3.0",
+    "chalk": "^3.0.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.1",
+    "express": "^4.16.4",
+    "express-bunyan-logger": "^1.3.3",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.14.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "nconf": "^0.10.0",
+    "nodegit": "^0.26.1",
+    "nodemon": "^2.0.15",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-saml": "^3.2.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.17.0",
+    "uuid4": "^1.1.4",
+    "xml2js": "^0.4.23",
+    "yup": "^0.32.11"
+  },
+  "engines": {
+    "node": ">= 8.9.4",
+    "npm": ">= 5.6.0"
+  }
+}

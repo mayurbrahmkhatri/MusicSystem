@@ -1,0 +1,41 @@
+{
+  "data": [{
+    "title": "International Destinations",
+    "description": "World's Best Places to Visit - Pack your bags to enter a world full of possibilities. See some endangered species of flora and fauna, taste a new kind of cuisine, jump off that cliff and go on a shopping spree in the local market.",
+    "items": [{
+      "image": "https://digitalnomads.world/wp-content/uploads/2021/10/santorini-digital-nomads-1024x683.jpg",
+      "placeName": "Santorini",
+      "punchuationLine": "An island in the Aegean Sea",
+      "country": "Greece",
+      "shortDescription": "An island in the Aegean Sea, Santorini is known for its pristine whitewashed houses spread across jagged cliffs, astonishing blue waters, dramatic views, fabulous sunsets, the ancient settlement of Thira and an active volcano."
+    },
+    {
+      "image": "https://hblimg.mmtcdn.com/content/hubble/img/maldives/mmt/destination/m_Maldives_activity_beach_l_687_1030.jpg",
+      "placeName": "Maldives",
+      "country": "Maldives",
+      "punchuationLine": "Home to sun-kissed beaches",
+      "shortDescription": "Home to sun-kissed beaches, swaying palms, sculpted coral reefs, luxury resorts and thrilling water sports, the tropical paradise called Maldives is a string of beautiful islands."
+    },
+    {
+      "image": "https://hblimg.mmtcdn.com/content/hubble/img/bali/mmt/destination/m_Bali_activity_adventure_l_362_543.jpg",
+      "placeName": "Bali",
+      "country": "Thiland",
+      "punchuationLine": "An exotic tropical destination",
+      "shortDescription": "An exotic tropical destination that flaunts scenic beaches and mountains, Bali is deep-rooted in culture and tradition, which adds to the charm of this scenic island."
+    },   
+    {
+      "image": "https://hblimg.mmtcdn.com/content/hubble/img/phi_phi_island/mmt/destination/m_Phi%20Phi%20island_l_322_922.jpg",
+      "placeName": "Phi Phi Islands",
+      "country": "Maldives",
+      "punchuationLine": "One of the most attractive groups of islands in Southeast Asia",
+      "shortDescription": "One of the most attractive groups of islands in Southeast Asia, the Phi Phi Islands are a tropical paradise with classic beaches, lying between the large island of Phuket and the coasts of the Strait of Malacca."
+    },
+    {
+      "image": "https://hblimg.mmtcdn.com/content/hubble/img/phi_phi_island/mmt/destination/m_Phi%20Phi%20island_l_322_922.jpg",
+      "placeName": "Phi Phi Islands",
+      "country": "Maldives",
+      "punchuationLine": "One of the most attractive groups of islands in Southeast Asia",
+      "shortDescription": "One of the most attractive groups of islands in Southeast Asia, the Phi Phi Islands are a tropical paradise with classic beaches, lying between the large island of Phuket and the coasts of the Strait of Malacca."
+    }]
+  }]
+}

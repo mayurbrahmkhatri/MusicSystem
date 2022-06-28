@@ -1,0 +1,22 @@
+[
+    {
+        "img": "https://a10.gaanacdn.com/gn_img/albums/YoEWlabzXB/oEWlrdyyKz/size_m.webp",
+        "title": "Hindi Top 10",
+        "author": "Weekly Top 10",
+        "songs": [
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/albums/d41WjznWPL/1Wjz8wynWP/size_m.jpg",
+                "name": "jago jago bakre",
+                "movie": "Pushpa",
+                "artist": "arijit singh"
+            },
+            {
+                "img": "https://a10.gaanacdn.com/gn_img/song/7rVW1aRWk5/VW1LG9Bg3k/size_xs_1639457383.webp",
+                "name": "Srivalli",
+                "movie": "pushpa",
+                "artist": "Javed Ali"
+            }
+        ]
+    }
+]
+    

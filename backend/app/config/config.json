@@ -1,0 +1,37 @@
+{
+ "port": 9090,
+  "uri": "/api",
+  "database": {
+    "host": "192.168.5.60",
+    "user": "postgres",
+    "password": "postgres",
+    "databaseName": "postgres",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "auth": {
+    "token": {
+      "tokenExpire": 86400,
+      "refreshTokenExpire": 3000,
+      "secret": "1zNjAhHttB3UBpTJuhm8pg=="
+    },
+    "crypto": {
+      "algo": "aes-256-gcm",
+      "password": "1zNjAhHttB3UBpTJuhm8pg=="
+    },
+    "accessUrlObjectExpire": 300
+  },
+  "logger": {
+    "children": {},
+    "console": "true",
+    "count": 5,
+    "file": false,
+    "level": "info",
+    "path": "./logs/log.log",
+    "period": "1d"
+  }
+}
