@@ -1,0 +1,1757 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2 (Ubuntu 14.2-1.pgdg20.04+1+b1)
+-- Dumped by pg_dump version 14.4 (Ubuntu 14.4-1.pgdg20.04+1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: album_details; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.album_details (
+    id integer NOT NULL,
+    album_id integer,
+    song_id integer,
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.album_details OWNER TO postgres;
+
+--
+-- Name: album_details_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.album_details_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.album_details_id_seq OWNER TO postgres;
+
+--
+-- Name: album_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.album_details_id_seq OWNED BY public.album_details.id;
+
+
+--
+-- Name: albums; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.albums (
+    id integer NOT NULL,
+    album_name character varying(255),
+    path character varying(255),
+    genre_id integer,
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.albums OWNER TO postgres;
+
+--
+-- Name: albums_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.albums_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.albums_id_seq OWNER TO postgres;
+
+--
+-- Name: albums_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.albums_id_seq OWNED BY public.albums.id;
+
+
+--
+-- Name: genres; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.genres (
+    id integer NOT NULL,
+    genre_name character varying(255),
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.genres OWNER TO postgres;
+
+--
+-- Name: genres_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.genres_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.genres_id_seq OWNER TO postgres;
+
+--
+-- Name: genres_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.genres_id_seq OWNED BY public.genres.id;
+
+
+--
+-- Name: playlist_details; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.playlist_details (
+    id integer NOT NULL,
+    playlist_id integer,
+    song_id integer,
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.playlist_details OWNER TO postgres;
+
+--
+-- Name: playlist_details_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.playlist_details_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.playlist_details_id_seq OWNER TO postgres;
+
+--
+-- Name: playlist_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.playlist_details_id_seq OWNED BY public.playlist_details.id;
+
+
+--
+-- Name: playlists; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.playlists (
+    id integer NOT NULL,
+    playlist_name character varying(255),
+    user_name character varying(255),
+    path character varying(255),
+    is_private character varying(255),
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.playlists OWNER TO postgres;
+
+--
+-- Name: playlists_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.playlists_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.playlists_id_seq OWNER TO postgres;
+
+--
+-- Name: playlists_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.playlists_id_seq OWNED BY public.playlists.id;
+
+
+--
+-- Name: podcasts; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.podcasts (
+    id integer NOT NULL,
+    podcast_name character varying(255),
+    author_name character varying(255),
+    img_path character varying(255),
+    path character varying(255),
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.podcasts OWNER TO postgres;
+
+--
+-- Name: podcasts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.podcasts_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.podcasts_id_seq OWNER TO postgres;
+
+--
+-- Name: podcasts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.podcasts_id_seq OWNED BY public.podcasts.id;
+
+
+--
+-- Name: song_qualities; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.song_qualities (
+    id integer NOT NULL,
+    song_name character varying(255),
+    movie_name character varying(255),
+    artist_name character varying(255),
+    path character varying(255),
+    img_path character varying(255),
+    genre_id integer,
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.song_qualities OWNER TO postgres;
+
+--
+-- Name: song_qualities_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.song_qualities_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.song_qualities_id_seq OWNER TO postgres;
+
+--
+-- Name: song_qualities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.song_qualities_id_seq OWNED BY public.song_qualities.id;
+
+
+--
+-- Name: songs; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.songs (
+    id integer NOT NULL,
+    song_name character varying(255),
+    movie_name character varying(255),
+    artist_name character varying(255),
+    path character varying(255),
+    img_path character varying(255),
+    song_duration character varying(255),
+    genre_id integer,
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL,
+    video_path character varying
+);
+
+
+ALTER TABLE public.songs OWNER TO postgres;
+
+--
+-- Name: songs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.songs_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.songs_id_seq OWNER TO postgres;
+
+--
+-- Name: songs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.songs_id_seq OWNED BY public.songs.id;
+
+
+--
+-- Name: user_favorites; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_favorites (
+    id integer NOT NULL,
+    user_name character varying(255),
+    song_id integer,
+    is_active boolean DEFAULT true,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.user_favorites OWNER TO postgres;
+
+--
+-- Name: user_favorites_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_favorites_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_favorites_id_seq OWNER TO postgres;
+
+--
+-- Name: user_favorites_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_favorites_id_seq OWNED BY public.user_favorites.id;
+
+
+--
+-- Name: user_histories; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_histories (
+    id integer NOT NULL,
+    user_name character varying(255),
+    song_id integer,
+    "timestamp" time without time zone,
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.user_histories OWNER TO postgres;
+
+--
+-- Name: user_histories_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_histories_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_histories_id_seq OWNER TO postgres;
+
+--
+-- Name: user_histories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_histories_id_seq OWNED BY public.user_histories.id;
+
+
+--
+-- Name: user_playlist_details; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_playlist_details (
+    id integer NOT NULL,
+    user_playlist_id integer,
+    song_id integer,
+    is_active boolean DEFAULT true,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.user_playlist_details OWNER TO postgres;
+
+--
+-- Name: user_playlist_details_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_playlist_details_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_playlist_details_id_seq OWNER TO postgres;
+
+--
+-- Name: user_playlist_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_playlist_details_id_seq OWNED BY public.user_playlist_details.id;
+
+
+--
+-- Name: user_playlists; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_playlists (
+    user_playlist_id integer NOT NULL,
+    user_name character varying(255),
+    playlist_name character varying(255),
+    is_active boolean,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.user_playlists OWNER TO postgres;
+
+--
+-- Name: user_playlists_user_playlist_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_playlists_user_playlist_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_playlists_user_playlist_id_seq OWNER TO postgres;
+
+--
+-- Name: user_playlists_user_playlist_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_playlists_user_playlist_id_seq OWNED BY public.user_playlists.user_playlist_id;
+
+
+--
+-- Name: user_subscriptions; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_subscriptions (
+    id integer NOT NULL,
+    user_name character varying(255),
+    start_date date,
+    end_date date,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.user_subscriptions OWNER TO postgres;
+
+--
+-- Name: user_subscriptions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_subscriptions_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_subscriptions_id_seq OWNER TO postgres;
+
+--
+-- Name: user_subscriptions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_subscriptions_id_seq OWNED BY public.user_subscriptions.id;
+
+
+--
+-- Name: user_tokens; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_tokens (
+    id integer NOT NULL,
+    email character varying(255) NOT NULL,
+    token character varying(255) NOT NULL,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.user_tokens OWNER TO postgres;
+
+--
+-- Name: user_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_tokens_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_tokens_id_seq OWNER TO postgres;
+
+--
+-- Name: user_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_tokens_id_seq OWNED BY public.user_tokens.id;
+
+
+--
+-- Name: userpodcasts; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.userpodcasts (
+    id integer NOT NULL,
+    user_name character varying(255),
+    podcast_name character varying(255),
+    path character varying(255),
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.userpodcasts OWNER TO postgres;
+
+--
+-- Name: userpodcasts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.userpodcasts_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.userpodcasts_id_seq OWNER TO postgres;
+
+--
+-- Name: userpodcasts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.userpodcasts_id_seq OWNED BY public.userpodcasts.id;
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.users (
+    id integer NOT NULL,
+    user_name character varying(255) NOT NULL,
+    first_name character varying(255) NOT NULL,
+    last_name character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    password character varying(255) NOT NULL,
+    contact_num bigint,
+    profile_pic character varying(255),
+    is_active boolean DEFAULT true,
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO postgres;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.users_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO postgres;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
+-- Name: album_details id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.album_details ALTER COLUMN id SET DEFAULT nextval('public.album_details_id_seq'::regclass);
+
+
+--
+-- Name: albums id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.albums ALTER COLUMN id SET DEFAULT nextval('public.albums_id_seq'::regclass);
+
+
+--
+-- Name: genres id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.genres ALTER COLUMN id SET DEFAULT nextval('public.genres_id_seq'::regclass);
+
+
+--
+-- Name: playlist_details id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.playlist_details ALTER COLUMN id SET DEFAULT nextval('public.playlist_details_id_seq'::regclass);
+
+
+--
+-- Name: playlists id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.playlists ALTER COLUMN id SET DEFAULT nextval('public.playlists_id_seq'::regclass);
+
+
+--
+-- Name: podcasts id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.podcasts ALTER COLUMN id SET DEFAULT nextval('public.podcasts_id_seq'::regclass);
+
+
+--
+-- Name: song_qualities id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.song_qualities ALTER COLUMN id SET DEFAULT nextval('public.song_qualities_id_seq'::regclass);
+
+
+--
+-- Name: songs id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.songs ALTER COLUMN id SET DEFAULT nextval('public.songs_id_seq'::regclass);
+
+
+--
+-- Name: user_favorites id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_favorites ALTER COLUMN id SET DEFAULT nextval('public.user_favorites_id_seq'::regclass);
+
+
+--
+-- Name: user_histories id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_histories ALTER COLUMN id SET DEFAULT nextval('public.user_histories_id_seq'::regclass);
+
+
+--
+-- Name: user_playlist_details id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_playlist_details ALTER COLUMN id SET DEFAULT nextval('public.user_playlist_details_id_seq'::regclass);
+
+
+--
+-- Name: user_playlists user_playlist_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_playlists ALTER COLUMN user_playlist_id SET DEFAULT nextval('public.user_playlists_user_playlist_id_seq'::regclass);
+
+
+--
+-- Name: user_subscriptions id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_subscriptions ALTER COLUMN id SET DEFAULT nextval('public.user_subscriptions_id_seq'::regclass);
+
+
+--
+-- Name: user_tokens id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_tokens ALTER COLUMN id SET DEFAULT nextval('public.user_tokens_id_seq'::regclass);
+
+
+--
+-- Name: userpodcasts id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.userpodcasts ALTER COLUMN id SET DEFAULT nextval('public.userpodcasts_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- Data for Name: album_details; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.album_details (id, album_id, song_id, is_active, "createdAt", "updatedAt") FROM stdin;
+1	3	1	\N	2022-04-26 12:15:19.178+05:30	2022-04-26 12:15:19.178+05:30
+2	3	2	\N	2022-04-26 13:44:06.921+05:30	2022-04-26 13:44:06.921+05:30
+3	4	3	\N	2022-04-26 14:43:01.707+05:30	2022-04-26 14:43:01.707+05:30
+4	5	4	\N	2022-04-26 14:44:20.685+05:30	2022-04-26 14:44:20.685+05:30
+5	5	1	\N	2022-04-26 14:48:23.808+05:30	2022-04-26 14:48:23.808+05:30
+6	6	5	\N	2022-04-26 14:53:11.53+05:30	2022-04-26 14:53:11.53+05:30
+7	7	6	\N	2022-04-26 14:53:52.642+05:30	2022-04-26 14:53:52.642+05:30
+8	8	7	\N	2022-04-26 14:54:18.595+05:30	2022-04-26 14:54:18.595+05:30
+9	9	8	\N	2022-04-26 14:55:05.908+05:30	2022-04-26 14:55:05.908+05:30
+10	10	9	\N	2022-04-26 14:55:47.911+05:30	2022-04-26 14:55:47.911+05:30
+11	11	10	\N	2022-04-26 14:55:58.937+05:30	2022-04-26 14:55:58.937+05:30
+12	12	11	\N	2022-04-26 14:56:39.491+05:30	2022-04-26 14:56:39.491+05:30
+13	13	12	\N	2022-04-26 14:56:46.933+05:30	2022-04-26 14:56:46.933+05:30
+14	14	13	\N	2022-04-26 14:56:54.482+05:30	2022-04-26 14:56:54.482+05:30
+15	3	14	\N	2022-04-26 15:00:10.133+05:30	2022-04-26 15:00:10.133+05:30
+\.
+
+
+--
+-- Data for Name: albums; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.albums (id, album_name, path, genre_id, is_active, "createdAt", "updatedAt") FROM stdin;
+2	Weekly Top 10	images/album/morning.webp	\N	\N	2022-04-20 16:27:41.353+05:30	2022-04-20 16:27:41.353+05:30
+3	Puspa: The Rise	images/album/puspa.jpg	\N	\N	2022-04-25 14:18:55.654+05:30	2022-04-25 14:18:55.654+05:30
+4	Kedarnath	images/album/kedarnath.webp	\N	\N	2022-04-25 14:21:38.128+05:30	2022-04-25 14:21:38.128+05:30
+5	shiddat	images/album/shiddat.webp	\N	\N	2022-04-25 14:30:38.606+05:30	2022-04-25 14:30:38.606+05:30
+6	Jersey	images/album/1650882153jersey.webp	\N	\N	2022-04-25 15:52:33.162+05:30	2022-04-25 15:52:33.162+05:30
+7	Gangubai Kathiyavadi	images/album/1650883193gangubai.webp	\N	\N	2022-04-25 16:09:53.488+05:30	2022-04-25 16:09:53.488+05:30
+8	Shershah	images/album/1650883252shershah.webp	\N	\N	2022-04-25 16:10:52.93+05:30	2022-04-25 16:10:52.93+05:30
+9	RRR(Hindi)	images/album/1650883293rrr.webp	\N	\N	2022-04-25 16:11:33.222+05:30	2022-04-25 16:11:33.222+05:30
+10	Bachchhan Paandey	images/album/1650883329bachchanPandey.webp	\N	\N	2022-04-25 16:12:09.565+05:30	2022-04-25 16:12:09.565+05:30
+11	Jab Harry Met Sejal	images/album/1650883361jabHarryMetSejal.webp	\N	\N	2022-04-25 16:12:41.141+05:30	2022-04-25 16:12:41.141+05:30
+12	M.S. Dhoni	images/album/1650883458MSDhoni.webp	\N	\N	2022-04-25 16:14:18.061+05:30	2022-04-25 16:14:18.061+05:30
+13	Love Aaj Kal	images/album/1650883517loveAajKal.webp	\N	\N	2022-04-25 16:15:17.671+05:30	2022-04-25 16:15:17.671+05:30
+14	Atrangi Re	images/album/1650883553atrangiRe.webp	\N	\N	2022-04-25 16:15:53.873+05:30	2022-04-25 16:15:53.873+05:30
+15	Tamasha	images/album/1650883584tamasha.webp	\N	\N	2022-04-25 16:16:24.491+05:30	2022-04-25 16:16:24.491+05:30
+16	Bell Bottom	images/album/1650885299bellBottom.webp	\N	\N	2022-04-25 16:44:59.071+05:30	2022-04-25 16:44:59.071+05:30
+17	Ae Dil Hai Mushkil	images/album/1650885329aeDilHaiMushkil.webp	\N	\N	2022-04-25 16:45:29.584+05:30	2022-04-25 16:45:29.584+05:30
+19	Chhichhore	images/album/1650885394chhichhore.webp	\N	\N	2022-04-25 16:46:34.345+05:30	2022-04-25 16:46:34.345+05:30
+41	vtd	images/album/1653053505rich-uncle.jpg	\N	\N	2022-05-20 19:01:45.257+05:30	2022-05-20 19:01:45.257+05:30
+42	vtd	images/album/1653053760rich-uncle.jpg	\N	\N	2022-05-20 19:06:00.984+05:30	2022-05-20 19:06:00.984+05:30
+\.
+
+
+--
+-- Data for Name: genres; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.genres (id, genre_name, is_active, "createdAt", "updatedAt") FROM stdin;
+\.
+
+
+--
+-- Data for Name: playlist_details; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.playlist_details (id, playlist_id, song_id, is_active, "createdAt", "updatedAt") FROM stdin;
+4	17	5	t	2022-04-22 15:29:55.49+05:30	2022-04-22 15:29:55.49+05:30
+5	17	2	t	2022-04-22 15:30:08.889+05:30	2022-04-22 15:30:08.889+05:30
+6	17	3	t	2022-04-22 15:30:17.947+05:30	2022-04-22 15:30:17.947+05:30
+7	16	1	t	2022-05-12 15:25:51.151+05:30	2022-05-12 15:25:51.151+05:30
+8	19	3	t	2022-05-12 15:28:01.022+05:30	2022-05-12 15:28:01.022+05:30
+9	19	2	t	2022-05-12 15:28:21.086+05:30	2022-05-12 15:28:21.086+05:30
+10	22	1	t	2022-05-12 15:28:43.242+05:30	2022-05-12 15:28:43.242+05:30
+11	22	3	t	2022-05-12 15:28:47.8+05:30	2022-05-12 15:28:47.8+05:30
+12	17	10	t	2022-05-25 15:15:32.417+05:30	2022-05-25 15:15:32.417+05:30
+13	17	11	t	2022-05-27 11:45:05.058+05:30	2022-05-27 11:45:05.058+05:30
+\.
+
+
+--
+-- Data for Name: playlists; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.playlists (id, playlist_name, user_name, path, is_private, "createdAt", "updatedAt") FROM stdin;
+22	Travel Vibes	admin	images/playlist/Travel vibes.jpg	1	2022-05-04 17:32:15.945+05:30	2022-05-12 15:11:19.888+05:30
+24	Bollywood Ragas	admin	images/playlist/bollyRagas.webp	1	2022-05-12 11:39:20.788+05:30	2022-05-12 15:16:23.171+05:30
+25	Poetry	admin	images/playlist/poetry.webp	1	2022-05-12 14:47:25.916+05:30	2022-05-12 15:17:25.888+05:30
+26	Happy Mood	admin	images/playlist/happy.webp	1	2022-05-12 14:50:48.382+05:30	2022-05-12 15:19:18.038+05:30
+27	Relaxing Music	admin	images/playlist/relax.webp	1	2022-05-12 14:51:26.168+05:30	2022-05-12 15:19:48.462+05:30
+17	Weekly Top Ten	admin	images/playlist/TopTen.webp	1	2022-04-20 16:16:38.494+05:30	2022-05-12 15:20:28.584+05:30
+18	Top Searches	admin	images/playlist/Top search.webp	1	2022-04-21 16:11:01.998+05:30	2022-05-12 15:20:51.469+05:30
+20	Instrumentals 	admin	images/playlist/instrumental.webp	1	2022-04-21 16:33:12.094+05:30	2022-05-12 15:21:24.603+05:30
+23	Moring Zen 	admin	images/playlist/morning.webp	1	2022-05-12 11:35:11.94+05:30	2022-05-12 15:21:46.195+05:30
+21	Retro	admin	images/playlist/retro.webp	1	2022-04-22 10:23:55.837+05:30	2022-05-12 15:22:13.574+05:30
+19	Top Searches	admin	images/playlist/Top search.webp	1	2022-04-21 16:32:52.923+05:30	2022-05-12 16:01:35.28+05:30
+\.
+
+
+--
+-- Data for Name: podcasts; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.podcasts (id, podcast_name, author_name, img_path, path, is_active, "createdAt", "updatedAt") FROM stdin;
+1	Rich Uncle	M. J. Kehllweet	images/podcast/rich-uncle.jpg	/files/podcasts/richUncle.mp3	t	2022-05-13 15:46:17.149+05:30	2022-05-13 16:32:25.761+05:30
+\.
+
+
+--
+-- Data for Name: song_qualities; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.song_qualities (id, song_name, movie_name, artist_name, path, img_path, genre_id, is_active, "createdAt", "updatedAt") FROM stdin;
+\.
+
+
+--
+-- Data for Name: songs; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.songs (id, song_name, movie_name, artist_name, path, img_path, song_duration, genre_id, is_active, "createdAt", "updatedAt", video_path) FROM stdin;
+5	Oo Boolega	Pushpa	Arijit Singh	/files/Oo Bolega Ya Oo Oo Bolega-320kbps.mp3,/files/Oo Bolega Ya Oo Oo Bolega-192kbps.mp3,/files/Oo Bolega Ya Oo Oo Bolega-128kbps.mp3	images/songs/puspa.jpg	\N	\N	t	2022-05-16 15:46:19.373+05:30	2022-05-16 16:08:39.836+05:30	/videos/kedarnath/jaan_nisaar.m3u8
+4	Maiyaa Mainu	Jersey	Sachet tandon	/files/MaiyaaMainu.mp3	images/songs/jersey.webp	182.047347	\N	t	2022-05-12 15:17:05.866+05:30	2022-05-12 15:17:05.866+05:30	/videos/hawayein/hawayein.m3u8
+8	Naacho Naacho	RRR	Arijit Singh	/files/NaachoNaacho.mp3\n	images/songs/rrr.webp	\N	\N	t	2022-05-17 13:58:28.33+05:30	2022-05-17 13:58:28.33+05:30	/videos/srivalli/srivalli.m3u8
+7	Jab Tak	MS. Dhoni	Jaaved Ali	/files/JabTak.mp3	images/songs/MSDhoni.webp	\N	\N	t	2022-05-17 13:53:45.317+05:30	2022-05-17 13:53:45.317+05:30	/videos/srivalli/srivalli.m3u8
+3	Shiddat (title track)	Shiddat	Manan Bharadwaj	/files/Shiddat-320kbps.mp3,/files/Shiddat-190kbps.mp3,/files/Shiddat-128kbps.mp3	images/songs/shiddat.webp	230.974694	\N	t	2022-05-12 12:11:46.266+05:30	2022-05-12 15:15:57.107+05:30	/videos/hawayein/hawayein.m3u8
+2	Srivaali	Pushpa	Jaaved Ali	/files/Srivalli-320kbps.mp3,/files/Srivalli-190kbps.mp3,/files/Srivalli-128kbps.mp3	images/songs/srivalli.webp	201.247347	\N	t	2022-05-12 11:33:42.201+05:30	2022-05-17 13:51:23.246+05:30	/videos/srivalli/srivalli.m3u8
+9	Sami Sami	pushpa	ABC	/files/Srivalli.mp3	images/songs/saami.webp	201.247347	\N	t	2022-05-24 11:41:50.967+05:30	2022-05-24 11:41:50.967+05:30	\N
+10	Tum Hi Ho	Aashiqui 2 	Arijit Singh	/files/Tum Hi Ho-320Kbps.mp3,/files/Tum Hi Ho-190Kbps.mp3,/files/Tum Hi Ho-120Kbps.mp3\n\n	images/songs/BollyRagas.png	\N	\N	t	2022-05-25 15:13:05.475+05:30	2022-05-25 15:13:05.475+05:30	/videos/srivalli/srivalli.m3u8
+11	Hello	Album	Adele	/files/Adele Hello-320kbps.mp3,/files/Adele Hello-190kbps.mp3,/files/Adele Hello-120kbps.mp3	images/songs/puspa.jpg	\N	\N	t	2022-05-27 11:38:59.058+05:30	2022-05-27 11:38:59.058+05:30	/videos/hawayein/hawayein.m3u8
+1	Jaan Nisaar	Kedarnath	Arijit Singh	/files/JaanNisaar.mp3	images/songs/kedarnath.webp	238.416	\N	t	2022-05-05 17:54:31.051+05:30	2022-05-16 15:59:37.803+05:30	/videos/kedarnath/jaan_nisaar.m3u8
+6	Hawayein	Jab Harry Met Sejal	Arijit Singh	/files/Hawayein.mp3\n	images/songs/jabHarryMetSejal.webp	\N	\N	t	2022-05-16 16:09:53.137+05:30	2022-05-17 12:13:53.833+05:30	/videos/hawayein/hawayein.m3u8
+\.
+
+
+--
+-- Data for Name: user_favorites; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_favorites (id, user_name, song_id, is_active, "createdAt", "updatedAt") FROM stdin;
+160	Maitri	6	t	2022-05-16 17:00:43.723+05:30	2022-05-16 17:00:43.723+05:30
+161	Maitri	6	t	2022-05-16 17:00:44.407+05:30	2022-05-16 17:00:44.407+05:30
+162	Maitri	6	t	2022-05-16 17:00:45.214+05:30	2022-05-16 17:00:45.214+05:30
+163	Maitri	2	t	2022-05-17 12:24:31.677+05:30	2022-05-17 12:24:31.677+05:30
+73	Maitri	1	t	2022-05-02 14:29:19.971+05:30	2022-05-02 14:29:19.971+05:30
+74	Maitri	8	t	2022-05-02 14:30:11.568+05:30	2022-05-02 14:30:11.568+05:30
+75	Maitri	8	t	2022-05-02 14:30:12.486+05:30	2022-05-02 14:30:12.486+05:30
+76	Maitri	7	t	2022-05-02 14:30:14.16+05:30	2022-05-02 14:30:14.16+05:30
+77	Maitri	10	t	2022-05-02 14:30:21.731+05:30	2022-05-02 14:30:21.731+05:30
+170	tp	5	t	2022-05-19 14:36:19.97+05:30	2022-05-19 14:36:19.97+05:30
+41	vivek.rajyaguru	1	t	2022-04-29 17:30:37.032129+05:30	2022-04-29 17:30:37.032129+05:30
+42	vivek.rajyaguru	5	t	2022-04-29 17:30:58.696976+05:30	2022-04-29 17:30:58.696976+05:30
+43	vivek.rajyaguru	4	t	2022-04-29 17:31:00.524996+05:30	2022-04-29 17:31:00.524996+05:30
+44	vivek.rajyaguru	3	t	2022-04-29 17:31:02.124143+05:30	2022-04-29 17:31:02.124143+05:30
+45	vivek.rajyaguru	2	t	2022-04-29 17:31:03.899557+05:30	2022-04-29 17:31:03.899557+05:30
+49	harshu	1	t	2022-05-02 11:48:19.898+05:30	2022-05-02 11:48:19.898+05:30
+50	harshu	1	t	2022-05-02 11:48:35.28+05:30	2022-05-02 11:48:35.28+05:30
+51	harshu	1	t	2022-05-02 11:48:45.903+05:30	2022-05-02 11:48:45.903+05:30
+146	vtt	1	t	2022-05-02 18:18:38.785+05:30	2022-05-02 18:18:38.785+05:30
+147	Maitri	1	t	2022-05-03 09:41:38.995+05:30	2022-05-03 09:41:38.995+05:30
+148	pranjal@2021	1	t	2022-05-03 09:44:33.621+05:30	2022-05-03 09:44:33.621+05:30
+149	pranjal@2021	2	t	2022-05-03 09:44:41.277+05:30	2022-05-03 09:44:41.277+05:30
+150	pranjal@2021	10	t	2022-05-03 09:45:00.239+05:30	2022-05-03 09:45:00.239+05:30
+\.
+
+
+--
+-- Data for Name: user_histories; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_histories (id, user_name, song_id, "timestamp", is_active, "createdAt", "updatedAt") FROM stdin;
+1	tp	1	\N	\N	2022-04-27 13:27:12.34+05:30	2022-04-27 13:27:12.34+05:30
+2	tp	1	\N	\N	2022-04-27 13:27:37.529+05:30	2022-04-27 13:27:37.529+05:30
+3	tp	2	\N	\N	2022-04-27 13:27:44.337+05:30	2022-04-27 13:27:44.337+05:30
+4	tp	1	\N	\N	2022-04-27 14:27:14.703+05:30	2022-04-27 14:27:14.703+05:30
+5	tp	2	\N	\N	2022-04-27 17:46:17.655+05:30	2022-04-27 17:46:17.655+05:30
+6	maitri.bhatt	5	\N	\N	2022-04-28 10:08:30.817+05:30	2022-04-28 10:08:30.817+05:30
+7	maitri.bhatt	5	\N	\N	2022-04-28 10:09:53.479+05:30	2022-04-28 10:09:53.479+05:30
+8	maitri.bhatt	3	\N	\N	2022-04-28 10:10:01.712+05:30	2022-04-28 10:10:01.712+05:30
+9	maitri.bhatt	3	\N	\N	2022-04-28 10:10:25.461+05:30	2022-04-28 10:10:25.461+05:30
+10	maitri.bhatt	3	\N	\N	2022-04-28 10:12:19.155+05:30	2022-04-28 10:12:19.155+05:30
+11	maitri.bhatt	6	\N	\N	2022-04-28 10:14:01.82+05:30	2022-04-28 10:14:01.82+05:30
+12	maitri.bhatt	7	\N	\N	2022-04-28 11:14:11.485+05:30	2022-04-28 11:14:11.485+05:30
+13	maitri.bhatt	2	\N	\N	2022-04-28 12:15:38.758+05:30	2022-04-28 12:15:38.758+05:30
+14	maitri.bhatt	2	\N	\N	2022-04-28 12:29:23.349+05:30	2022-04-28 12:29:23.349+05:30
+15	maitri.bhatt	2	\N	\N	2022-04-28 12:29:23.353+05:30	2022-04-28 12:29:23.353+05:30
+17	maitri.bhatt	2	\N	\N	2022-04-28 12:25:59.405+05:30	2022-04-28 12:25:59.405+05:30
+16	maitri.bhatt	2	\N	\N	2022-04-28 12:25:59.401+05:30	2022-04-28 12:25:59.401+05:30
+18	maitri.bhatt	2	\N	\N	2022-04-28 12:32:50.025+05:30	2022-04-28 12:32:50.025+05:30
+19	maitri.bhatt	2	\N	\N	2022-04-28 12:37:54.132+05:30	2022-04-28 12:37:54.132+05:30
+20	maitri.bhatt	2	\N	\N	2022-04-28 12:38:05.06+05:30	2022-04-28 12:38:05.06+05:30
+21	maitri.bhatt	7	\N	\N	2022-04-28 12:41:16.982+05:30	2022-04-28 12:41:16.982+05:30
+22	maitri.bhatt	7	\N	\N	2022-04-28 12:41:18.888+05:30	2022-04-28 12:41:18.888+05:30
+23	maitri.bhatt	0	\N	\N	2022-04-28 17:13:25.64+05:30	2022-04-28 17:13:25.64+05:30
+24	maitri.bhatt	0	\N	\N	2022-04-28 17:58:43.121+05:30	2022-04-28 17:58:43.121+05:30
+25	maitri.bhatt	0	\N	\N	2022-04-28 17:58:48.059+05:30	2022-04-28 17:58:48.059+05:30
+26	maitri.bhatt	0	\N	\N	2022-04-28 17:58:48.635+05:30	2022-04-28 17:58:48.635+05:30
+27	maitri.bhatt	0	\N	\N	2022-05-02 09:50:54.716+05:30	2022-05-02 09:50:54.716+05:30
+28	vivek.rajyaguru	14	\N	\N	2022-05-02 12:55:12.673+05:30	2022-05-02 12:55:12.673+05:30
+29	vivek.rajyaguru	1	\N	\N	2022-05-02 12:55:28.222+05:30	2022-05-02 12:55:28.222+05:30
+30	vivek.rajyaguru	1	\N	\N	2022-05-02 14:13:03.165+05:30	2022-05-02 14:13:03.165+05:30
+31	Maitri	6	\N	\N	2022-05-02 14:31:50.03+05:30	2022-05-02 14:31:50.03+05:30
+32	Maitri	7	\N	\N	2022-05-02 15:00:15.147+05:30	2022-05-02 15:00:15.147+05:30
+33	Maitri	7	\N	\N	2022-05-02 15:00:20.716+05:30	2022-05-02 15:00:20.716+05:30
+34	Maitri	9	\N	\N	2022-05-02 15:00:20.723+05:30	2022-05-02 15:00:20.723+05:30
+35	Maitri	8	\N	\N	2022-05-02 15:58:43.169+05:30	2022-05-02 15:58:43.169+05:30
+36	Maitri	6	\N	\N	2022-05-03 09:42:00.054+05:30	2022-05-03 09:42:00.054+05:30
+37	Maitri	6	\N	\N	2022-05-03 09:42:06.764+05:30	2022-05-03 09:42:06.764+05:30
+38	Maitri	14	\N	\N	2022-05-03 09:42:06.786+05:30	2022-05-03 09:42:06.786+05:30
+39	tp	1	\N	\N	2022-05-10 18:30:12.633+05:30	2022-05-10 18:30:12.633+05:30
+40	Maitri	2	\N	\N	2022-05-12 14:40:22.65+05:30	2022-05-12 14:40:22.65+05:30
+41	Maitri	2	\N	\N	2022-05-12 14:40:23.074+05:30	2022-05-12 14:40:23.074+05:30
+42	Maitri	2	\N	\N	2022-05-12 14:40:23.146+05:30	2022-05-12 14:40:23.146+05:30
+43	Maitri	2	\N	\N	2022-05-12 14:40:23.206+05:30	2022-05-12 14:40:23.206+05:30
+44	Maitri	2	\N	\N	2022-05-12 14:40:23.287+05:30	2022-05-12 14:40:23.287+05:30
+45	Maitri	2	\N	\N	2022-05-12 14:40:27.793+05:30	2022-05-12 14:40:27.793+05:30
+46	Maitri	2	\N	\N	2022-05-12 14:40:27.85+05:30	2022-05-12 14:40:27.85+05:30
+47	Maitri	2	\N	\N	2022-05-12 14:40:27.908+05:30	2022-05-12 14:40:27.908+05:30
+48	Maitri	2	\N	\N	2022-05-12 14:40:27.965+05:30	2022-05-12 14:40:27.965+05:30
+49	Maitri	2	\N	\N	2022-05-12 14:40:29.997+05:30	2022-05-12 14:40:29.997+05:30
+50	Maitri	2	\N	\N	2022-05-12 15:36:29.579+05:30	2022-05-12 15:36:29.579+05:30
+51	Maitri	2	\N	\N	2022-05-12 15:36:30.01+05:30	2022-05-12 15:36:30.01+05:30
+52	Maitri	2	\N	\N	2022-05-12 15:36:30.077+05:30	2022-05-12 15:36:30.077+05:30
+53	Maitri	2	\N	\N	2022-05-12 15:36:30.168+05:30	2022-05-12 15:36:30.168+05:30
+54	Maitri	2	\N	\N	2022-05-12 15:36:30.271+05:30	2022-05-12 15:36:30.271+05:30
+55	Maitri	2	\N	\N	2022-05-12 15:36:56+05:30	2022-05-12 15:36:56+05:30
+56	Maitri	2	\N	\N	2022-05-12 15:36:56.054+05:30	2022-05-12 15:36:56.054+05:30
+57	Maitri	2	\N	\N	2022-05-12 15:36:56.11+05:30	2022-05-12 15:36:56.11+05:30
+58	Maitri	2	\N	\N	2022-05-12 15:36:56.161+05:30	2022-05-12 15:36:56.161+05:30
+59	Maitri	2	\N	\N	2022-05-12 15:36:56.385+05:30	2022-05-12 15:36:56.385+05:30
+60	Maitri	2	\N	\N	2022-05-12 15:36:56.456+05:30	2022-05-12 15:36:56.456+05:30
+61	Maitri	2	\N	\N	2022-05-12 15:36:56.504+05:30	2022-05-12 15:36:56.504+05:30
+62	Maitri	2	\N	\N	2022-05-12 15:36:56.552+05:30	2022-05-12 15:36:56.552+05:30
+63	Maitri	2	\N	\N	2022-05-12 15:37:02.003+05:30	2022-05-12 15:37:02.003+05:30
+64	Maitri	2	\N	\N	2022-05-12 15:37:03.993+05:30	2022-05-12 15:37:03.993+05:30
+65	Maitri	2	\N	\N	2022-05-12 15:37:04.074+05:30	2022-05-12 15:37:04.074+05:30
+66	Maitri	2	\N	\N	2022-05-12 15:37:05.254+05:30	2022-05-12 15:37:05.254+05:30
+67	Maitri	2	\N	\N	2022-05-12 15:37:05.682+05:30	2022-05-12 15:37:05.682+05:30
+68	Maitri	2	\N	\N	2022-05-12 15:37:05.765+05:30	2022-05-12 15:37:05.765+05:30
+69	Maitri	2	\N	\N	2022-05-12 15:37:07.474+05:30	2022-05-12 15:37:07.474+05:30
+70	Maitri	2	\N	\N	2022-05-12 15:37:08.791+05:30	2022-05-12 15:37:08.791+05:30
+71	Maitri	2	\N	\N	2022-05-12 15:37:08.843+05:30	2022-05-12 15:37:08.843+05:30
+72	Maitri	2	\N	\N	2022-05-12 15:37:08.888+05:30	2022-05-12 15:37:08.888+05:30
+73	Maitri	2	\N	\N	2022-05-12 15:37:08.951+05:30	2022-05-12 15:37:08.951+05:30
+74	Maitri	2	\N	\N	2022-05-12 15:37:09.025+05:30	2022-05-12 15:37:09.025+05:30
+75	Maitri	1	\N	\N	2022-05-12 16:21:25.52+05:30	2022-05-12 16:21:25.52+05:30
+76	Maitri	1	\N	\N	2022-05-12 16:46:10.283+05:30	2022-05-12 16:46:10.283+05:30
+77	Maitri	1	\N	\N	2022-05-12 17:04:04.498+05:30	2022-05-12 17:04:04.498+05:30
+78	Maitri	2	\N	\N	2022-05-12 17:04:15.191+05:30	2022-05-12 17:04:15.191+05:30
+79	Maitri	1	\N	\N	2022-05-12 17:30:55.934+05:30	2022-05-12 17:30:55.934+05:30
+80	Maitri	1	\N	\N	2022-05-12 17:30:58.968+05:30	2022-05-12 17:30:58.968+05:30
+81	Maitri	1	\N	\N	2022-05-12 17:31:03.674+05:30	2022-05-12 17:31:03.674+05:30
+82	Maitri	1	\N	\N	2022-05-12 17:31:05.252+05:30	2022-05-12 17:31:05.252+05:30
+83	Maitri	1	\N	\N	2022-05-12 17:31:54.779+05:30	2022-05-12 17:31:54.779+05:30
+84	Maitri	1	\N	\N	2022-05-12 17:34:00.199+05:30	2022-05-12 17:34:00.199+05:30
+85	Maitri	1	\N	\N	2022-05-12 17:34:02.46+05:30	2022-05-12 17:34:02.46+05:30
+86	Maitri	1	\N	\N	2022-05-12 17:34:12.338+05:30	2022-05-12 17:34:12.338+05:30
+87	Maitri	1	\N	\N	2022-05-12 17:34:13.486+05:30	2022-05-12 17:34:13.486+05:30
+88	Maitri	1	\N	\N	2022-05-12 17:37:23.727+05:30	2022-05-12 17:37:23.727+05:30
+89	Maitri	1	\N	\N	2022-05-12 17:37:28.21+05:30	2022-05-12 17:37:28.21+05:30
+90	Maitri	1	\N	\N	2022-05-12 17:43:46.89+05:30	2022-05-12 17:43:46.89+05:30
+91	Maitri	1	\N	\N	2022-05-12 17:43:49.873+05:30	2022-05-12 17:43:49.873+05:30
+92	Maitri	1	\N	\N	2022-05-12 17:48:54.307+05:30	2022-05-12 17:48:54.307+05:30
+93	Maitri	1	\N	\N	2022-05-12 17:48:56.096+05:30	2022-05-12 17:48:56.096+05:30
+94	Maitri	1	\N	\N	2022-05-16 09:48:59.563+05:30	2022-05-16 09:48:59.563+05:30
+95	Maitri	1	\N	\N	2022-05-16 13:18:57.459+05:30	2022-05-16 13:18:57.459+05:30
+96	Maitri	2	\N	\N	2022-05-16 13:59:03.816+05:30	2022-05-16 13:59:03.816+05:30
+97	Maitri	2	\N	\N	2022-05-16 14:00:03.662+05:30	2022-05-16 14:00:03.662+05:30
+98	Maitri	1	\N	\N	2022-05-16 14:17:45.104+05:30	2022-05-16 14:17:45.104+05:30
+99	Maitri	1	\N	\N	2022-05-16 14:18:09.188+05:30	2022-05-16 14:18:09.188+05:30
+100	Maitri	2	\N	\N	2022-05-16 14:18:09.224+05:30	2022-05-16 14:18:09.224+05:30
+101	Maitri	2	\N	\N	2022-05-16 14:18:10.831+05:30	2022-05-16 14:18:10.831+05:30
+102	Maitri	1	\N	\N	2022-05-16 14:18:10.838+05:30	2022-05-16 14:18:10.838+05:30
+103	Maitri	1	\N	\N	2022-05-16 14:25:54.798+05:30	2022-05-16 14:25:54.798+05:30
+104	Maitri	1	\N	\N	2022-05-16 14:26:08.542+05:30	2022-05-16 14:26:08.542+05:30
+105	Maitri	1	\N	\N	2022-05-16 14:26:12.253+05:30	2022-05-16 14:26:12.253+05:30
+106	Maitri	5	\N	\N	2022-05-16 15:50:18.32+05:30	2022-05-16 15:50:18.32+05:30
+107	Maitri	5	\N	\N	2022-05-16 15:54:15.034+05:30	2022-05-16 15:54:15.034+05:30
+108	Maitri	5	\N	\N	2022-05-16 15:55:22.377+05:30	2022-05-16 15:55:22.377+05:30
+109	Maitri	5	\N	\N	2022-05-16 16:00:39.193+05:30	2022-05-16 16:00:39.193+05:30
+110	Maitri	5	\N	\N	2022-05-16 16:08:48.198+05:30	2022-05-16 16:08:48.198+05:30
+111	Maitri	5	\N	\N	2022-05-16 16:08:51.953+05:30	2022-05-16 16:08:51.953+05:30
+112	Maitri	6	\N	\N	2022-05-16 16:09:58.921+05:30	2022-05-16 16:09:58.921+05:30
+113	Maitri	6	\N	\N	2022-05-16 16:10:02.802+05:30	2022-05-16 16:10:02.802+05:30
+114	Maitri	6	\N	\N	2022-05-16 17:00:41.958+05:30	2022-05-16 17:00:41.958+05:30
+115	Maitri	6	\N	\N	2022-05-16 17:00:43.725+05:30	2022-05-16 17:00:43.725+05:30
+116	Maitri	6	\N	\N	2022-05-16 17:00:43.841+05:30	2022-05-16 17:00:43.841+05:30
+117	Maitri	6	\N	\N	2022-05-16 17:00:44.409+05:30	2022-05-16 17:00:44.409+05:30
+118	Maitri	6	\N	\N	2022-05-16 17:00:45.124+05:30	2022-05-16 17:00:45.124+05:30
+119	Maitri	6	\N	\N	2022-05-16 17:00:45.216+05:30	2022-05-16 17:00:45.216+05:30
+120	Maitri	2	\N	\N	2022-05-16 17:43:55.452+05:30	2022-05-16 17:43:55.452+05:30
+121	Maitri	5	\N	\N	2022-05-17 10:45:08.93+05:30	2022-05-17 10:45:08.93+05:30
+122	Maitri	1	\N	\N	2022-05-17 10:52:00.157+05:30	2022-05-17 10:52:00.157+05:30
+123	Maitri	1	\N	\N	2022-05-17 10:52:06.464+05:30	2022-05-17 10:52:06.464+05:30
+124	Maitri	1	\N	\N	2022-05-17 10:52:22.877+05:30	2022-05-17 10:52:22.877+05:30
+125	Maitri	1	\N	\N	2022-05-17 10:52:27.46+05:30	2022-05-17 10:52:27.46+05:30
+126	Maitri	1	\N	\N	2022-05-17 10:52:35.918+05:30	2022-05-17 10:52:35.918+05:30
+127	Maitri	1	\N	\N	2022-05-17 10:53:43.094+05:30	2022-05-17 10:53:43.094+05:30
+128	Maitri	5	\N	\N	2022-05-17 11:16:56.681+05:30	2022-05-17 11:16:56.681+05:30
+129	Maitri	5	\N	\N	2022-05-17 11:16:58.051+05:30	2022-05-17 11:16:58.051+05:30
+130	Maitri	1	\N	\N	2022-05-17 11:16:58.067+05:30	2022-05-17 11:16:58.067+05:30
+131	Maitri	6	\N	\N	2022-05-17 12:14:08.193+05:30	2022-05-17 12:14:08.193+05:30
+132	Maitri	2	\N	\N	2022-05-17 12:24:32.585+05:30	2022-05-17 12:24:32.585+05:30
+133	Maitri	2	\N	\N	2022-05-17 12:24:51.051+05:30	2022-05-17 12:24:51.051+05:30
+134	Maitri	2	\N	\N	2022-05-17 12:24:53.514+05:30	2022-05-17 12:24:53.514+05:30
+135	Maitri	2	\N	\N	2022-05-17 12:24:56.93+05:30	2022-05-17 12:24:56.93+05:30
+136	Maitri	6	\N	\N	2022-05-17 12:24:56.939+05:30	2022-05-17 12:24:56.939+05:30
+137	Maitri	6	\N	\N	2022-05-17 12:25:06.158+05:30	2022-05-17 12:25:06.158+05:30
+138	Maitri	6	\N	\N	2022-05-17 12:25:55.796+05:30	2022-05-17 12:25:55.796+05:30
+139	Maitri	6	\N	\N	2022-05-17 12:25:56.016+05:30	2022-05-17 12:25:56.016+05:30
+140	Maitri	6	\N	\N	2022-05-17 12:26:14.319+05:30	2022-05-17 12:26:14.319+05:30
+141	Maitri	6	\N	\N	2022-05-17 12:26:14.511+05:30	2022-05-17 12:26:14.511+05:30
+142	Maitri	6	\N	\N	2022-05-17 12:26:19.37+05:30	2022-05-17 12:26:19.37+05:30
+143	Maitri	6	\N	\N	2022-05-17 12:26:19.435+05:30	2022-05-17 12:26:19.435+05:30
+144	Maitri	6	\N	\N	2022-05-17 12:26:20.963+05:30	2022-05-17 12:26:20.963+05:30
+145	Maitri	6	\N	\N	2022-05-17 12:26:21.052+05:30	2022-05-17 12:26:21.052+05:30
+146	Maitri	6	\N	\N	2022-05-17 12:26:22.286+05:30	2022-05-17 12:26:22.286+05:30
+147	Maitri	6	\N	\N	2022-05-17 12:26:22.362+05:30	2022-05-17 12:26:22.362+05:30
+148	Maitri	6	\N	\N	2022-05-17 12:26:26.034+05:30	2022-05-17 12:26:26.034+05:30
+149	Maitri	6	\N	\N	2022-05-17 12:26:26.105+05:30	2022-05-17 12:26:26.105+05:30
+150	Maitri	6	\N	\N	2022-05-17 12:26:28.101+05:30	2022-05-17 12:26:28.101+05:30
+151	Maitri	6	\N	\N	2022-05-17 12:26:28.162+05:30	2022-05-17 12:26:28.162+05:30
+152	Maitri	6	\N	\N	2022-05-17 12:26:41.941+05:30	2022-05-17 12:26:41.941+05:30
+153	Maitri	6	\N	\N	2022-05-17 12:26:42.176+05:30	2022-05-17 12:26:42.176+05:30
+154	Maitri	6	\N	\N	2022-05-17 12:26:52.164+05:30	2022-05-17 12:26:52.164+05:30
+155	Maitri	6	\N	\N	2022-05-17 12:26:52.226+05:30	2022-05-17 12:26:52.226+05:30
+156	Maitri	6	\N	\N	2022-05-17 12:26:58.105+05:30	2022-05-17 12:26:58.105+05:30
+157	Maitri	6	\N	\N	2022-05-17 12:26:58.191+05:30	2022-05-17 12:26:58.191+05:30
+158	Maitri	6	\N	\N	2022-05-17 12:27:10.221+05:30	2022-05-17 12:27:10.221+05:30
+159	Maitri	6	\N	\N	2022-05-17 12:27:10.397+05:30	2022-05-17 12:27:10.397+05:30
+160	Maitri	6	\N	\N	2022-05-17 12:27:15.661+05:30	2022-05-17 12:27:15.661+05:30
+161	Maitri	6	\N	\N	2022-05-17 12:27:15.717+05:30	2022-05-17 12:27:15.717+05:30
+162	Maitri	6	\N	\N	2022-05-17 12:27:23.233+05:30	2022-05-17 12:27:23.233+05:30
+163	Maitri	6	\N	\N	2022-05-17 12:27:23.31+05:30	2022-05-17 12:27:23.31+05:30
+164	Maitri	6	\N	\N	2022-05-17 12:27:25.046+05:30	2022-05-17 12:27:25.046+05:30
+165	Maitri	6	\N	\N	2022-05-17 12:27:25.143+05:30	2022-05-17 12:27:25.143+05:30
+166	Maitri	6	\N	\N	2022-05-17 12:27:28.506+05:30	2022-05-17 12:27:28.506+05:30
+167	Maitri	6	\N	\N	2022-05-17 12:27:28.576+05:30	2022-05-17 12:27:28.576+05:30
+168	Maitri	6	\N	\N	2022-05-17 12:27:30.165+05:30	2022-05-17 12:27:30.165+05:30
+169	Maitri	6	\N	\N	2022-05-17 12:27:30.225+05:30	2022-05-17 12:27:30.225+05:30
+170	Maitri	6	\N	\N	2022-05-17 12:36:52.42+05:30	2022-05-17 12:36:52.42+05:30
+171	Maitri	6	\N	\N	2022-05-17 12:37:01.773+05:30	2022-05-17 12:37:01.773+05:30
+172	Maitri	6	\N	\N	2022-05-17 12:38:00.712+05:30	2022-05-17 12:38:00.712+05:30
+173	Maitri	6	\N	\N	2022-05-17 12:38:00.954+05:30	2022-05-17 12:38:00.954+05:30
+174	Maitri	6	\N	\N	2022-05-17 12:38:01.561+05:30	2022-05-17 12:38:01.561+05:30
+175	Maitri	6	\N	\N	2022-05-17 12:38:01.643+05:30	2022-05-17 12:38:01.643+05:30
+176	Maitri	6	\N	\N	2022-05-17 12:38:04.789+05:30	2022-05-17 12:38:04.789+05:30
+177	Maitri	6	\N	\N	2022-05-17 12:38:04.859+05:30	2022-05-17 12:38:04.859+05:30
+178	Maitri	6	\N	\N	2022-05-17 12:38:06.842+05:30	2022-05-17 12:38:06.842+05:30
+179	Maitri	6	\N	\N	2022-05-17 12:38:06.92+05:30	2022-05-17 12:38:06.92+05:30
+180	Maitri	6	\N	\N	2022-05-17 12:38:08.358+05:30	2022-05-17 12:38:08.358+05:30
+181	Maitri	6	\N	\N	2022-05-17 12:38:08.413+05:30	2022-05-17 12:38:08.413+05:30
+182	Maitri	6	\N	\N	2022-05-17 12:38:11.597+05:30	2022-05-17 12:38:11.597+05:30
+183	Maitri	6	\N	\N	2022-05-17 12:38:11.659+05:30	2022-05-17 12:38:11.659+05:30
+184	Maitri	6	\N	\N	2022-05-17 12:38:15.944+05:30	2022-05-17 12:38:15.944+05:30
+185	Maitri	6	\N	\N	2022-05-17 12:38:16.017+05:30	2022-05-17 12:38:16.017+05:30
+186	Maitri	6	\N	\N	2022-05-17 12:38:37.795+05:30	2022-05-17 12:38:37.795+05:30
+187	Maitri	6	\N	\N	2022-05-17 12:38:37.969+05:30	2022-05-17 12:38:37.969+05:30
+188	Maitri	6	\N	\N	2022-05-17 12:38:51.335+05:30	2022-05-17 12:38:51.335+05:30
+189	Maitri	6	\N	\N	2022-05-17 12:41:15.356+05:30	2022-05-17 12:41:15.356+05:30
+190	Maitri	6	\N	\N	2022-05-17 12:41:18.804+05:30	2022-05-17 12:41:18.804+05:30
+191	Maitri	6	\N	\N	2022-05-17 12:44:31.974+05:30	2022-05-17 12:44:31.974+05:30
+192	Maitri	2	\N	\N	2022-05-17 13:43:04.68+05:30	2022-05-17 13:43:04.68+05:30
+193	Maitri	2	\N	\N	2022-05-17 13:43:08.463+05:30	2022-05-17 13:43:08.463+05:30
+194	Maitri	2	\N	\N	2022-05-17 13:43:11.562+05:30	2022-05-17 13:43:11.562+05:30
+195	Maitri	6	\N	\N	2022-05-17 13:43:11.566+05:30	2022-05-17 13:43:11.566+05:30
+196	Maitri	6	\N	\N	2022-05-17 13:45:01.416+05:30	2022-05-17 13:45:01.416+05:30
+197	Maitri	6	\N	\N	2022-05-17 13:45:01.622+05:30	2022-05-17 13:45:01.622+05:30
+198	Maitri	6	\N	\N	2022-05-17 13:45:19.554+05:30	2022-05-17 13:45:19.554+05:30
+199	Maitri	6	\N	\N	2022-05-17 13:45:19.694+05:30	2022-05-17 13:45:19.694+05:30
+200	Maitri	6	\N	\N	2022-05-17 13:45:19.804+05:30	2022-05-17 13:45:19.804+05:30
+201	Maitri	6	\N	\N	2022-05-17 13:45:19.881+05:30	2022-05-17 13:45:19.881+05:30
+202	Maitri	6	\N	\N	2022-05-17 13:45:35.486+05:30	2022-05-17 13:45:35.486+05:30
+203	Maitri	6	\N	\N	2022-05-17 13:45:35.654+05:30	2022-05-17 13:45:35.654+05:30
+204	Maitri	6	\N	\N	2022-05-17 13:45:55.117+05:30	2022-05-17 13:45:55.117+05:30
+205	Maitri	6	\N	\N	2022-05-17 13:45:55.24+05:30	2022-05-17 13:45:55.24+05:30
+206	Maitri	6	\N	\N	2022-05-17 13:45:55.317+05:30	2022-05-17 13:45:55.317+05:30
+207	Maitri	6	\N	\N	2022-05-17 13:45:55.382+05:30	2022-05-17 13:45:55.382+05:30
+208	Maitri	6	\N	\N	2022-05-17 13:45:55.481+05:30	2022-05-17 13:45:55.481+05:30
+209	Maitri	6	\N	\N	2022-05-17 13:45:55.545+05:30	2022-05-17 13:45:55.545+05:30
+210	Maitri	6	\N	\N	2022-05-17 13:46:10.32+05:30	2022-05-17 13:46:10.32+05:30
+211	Maitri	6	\N	\N	2022-05-17 13:46:18.735+05:30	2022-05-17 13:46:18.735+05:30
+212	Maitri	6	\N	\N	2022-05-17 13:46:25.786+05:30	2022-05-17 13:46:25.786+05:30
+213	Maitri	6	\N	\N	2022-05-17 13:46:27.729+05:30	2022-05-17 13:46:27.729+05:30
+214	Maitri	6	\N	\N	2022-05-17 13:46:29.808+05:30	2022-05-17 13:46:29.808+05:30
+215	Maitri	2	\N	\N	2022-05-17 13:46:37.871+05:30	2022-05-17 13:46:37.871+05:30
+216	Maitri	2	\N	\N	2022-05-17 13:46:39.915+05:30	2022-05-17 13:46:39.915+05:30
+217	Maitri	2	\N	\N	2022-05-17 13:47:06.797+05:30	2022-05-17 13:47:06.797+05:30
+218	Maitri	2	\N	\N	2022-05-17 13:47:06.959+05:30	2022-05-17 13:47:06.959+05:30
+219	Maitri	2	\N	\N	2022-05-17 13:48:21.902+05:30	2022-05-17 13:48:21.902+05:30
+220	Maitri	2	\N	\N	2022-05-17 13:49:18.95+05:30	2022-05-17 13:49:18.95+05:30
+221	Maitri	6	\N	\N	2022-05-17 13:49:18.993+05:30	2022-05-17 13:49:18.993+05:30
+222	Maitri	6	\N	\N	2022-05-17 13:49:31.256+05:30	2022-05-17 13:49:31.256+05:30
+223	Maitri	2	\N	\N	2022-05-17 13:49:31.306+05:30	2022-05-17 13:49:31.306+05:30
+224	Maitri	2	\N	\N	2022-05-17 13:51:33.593+05:30	2022-05-17 13:51:33.593+05:30
+225	Maitri	2	\N	\N	2022-05-17 13:51:43.939+05:30	2022-05-17 13:51:43.939+05:30
+226	Maitri	5	\N	\N	2022-05-17 13:51:43.947+05:30	2022-05-17 13:51:43.947+05:30
+227	Maitri	5	\N	\N	2022-05-17 13:51:50.541+05:30	2022-05-17 13:51:50.541+05:30
+228	Maitri	1	\N	\N	2022-05-17 13:51:50.547+05:30	2022-05-17 13:51:50.547+05:30
+229	Maitri	1	\N	\N	2022-05-17 13:51:54.442+05:30	2022-05-17 13:51:54.442+05:30
+230	Maitri	4	\N	\N	2022-05-17 13:56:02.558+05:30	2022-05-17 13:56:02.558+05:30
+231	Maitri	8	\N	\N	2022-05-17 13:58:38.804+05:30	2022-05-17 13:58:38.804+05:30
+232	Maitri	4	\N	\N	2022-05-17 14:01:09.612+05:30	2022-05-17 14:01:09.612+05:30
+233	Maitri	6	\N	\N	2022-05-17 14:10:27.307+05:30	2022-05-17 14:10:27.307+05:30
+234	Maitri	3	\N	\N	2022-05-17 14:14:48.332+05:30	2022-05-17 14:14:48.332+05:30
+235	Maitri	3	\N	\N	2022-05-17 14:14:48.85+05:30	2022-05-17 14:14:48.85+05:30
+236	Maitri	3	\N	\N	2022-05-17 14:14:48.902+05:30	2022-05-17 14:14:48.902+05:30
+237	Maitri	3	\N	\N	2022-05-17 14:14:48.958+05:30	2022-05-17 14:14:48.958+05:30
+238	Maitri	3	\N	\N	2022-05-17 14:14:49.032+05:30	2022-05-17 14:14:49.032+05:30
+239	Maitri	3	\N	\N	2022-05-17 14:15:08.567+05:30	2022-05-17 14:15:08.567+05:30
+240	Maitri	1	\N	\N	2022-05-17 14:15:08.607+05:30	2022-05-17 14:15:08.607+05:30
+241	Maitri	1	\N	\N	2022-05-17 14:15:45.236+05:30	2022-05-17 14:15:45.236+05:30
+242	Maitri	1	\N	\N	2022-05-17 14:15:45.238+05:30	2022-05-17 14:15:45.238+05:30
+243	Maitri	1	\N	\N	2022-05-17 14:15:45.24+05:30	2022-05-17 14:15:45.24+05:30
+244	Maitri	3	\N	\N	2022-05-17 14:24:12.956+05:30	2022-05-17 14:24:12.956+05:30
+245	Maitri	1	\N	\N	2022-05-17 16:58:46.647+05:30	2022-05-17 16:58:46.647+05:30
+246	Maitri	1	\N	\N	2022-05-17 17:03:01.858+05:30	2022-05-17 17:03:01.858+05:30
+247	Maitri	1	\N	\N	2022-05-17 17:03:05.231+05:30	2022-05-17 17:03:05.231+05:30
+248	Maitri	1	\N	\N	2022-05-18 09:45:07.716+05:30	2022-05-18 09:45:07.716+05:30
+249	Maitri	6	\N	\N	2022-05-18 09:45:10.633+05:30	2022-05-18 09:45:10.633+05:30
+250	Maitri	2	\N	\N	2022-05-18 09:45:13.393+05:30	2022-05-18 09:45:13.393+05:30
+251	Maitri	1	\N	\N	2022-05-18 09:45:43.093+05:30	2022-05-18 09:45:43.093+05:30
+252	Maitri	1	\N	\N	2022-05-18 09:45:45.914+05:30	2022-05-18 09:45:45.914+05:30
+253	Maitri	6	\N	\N	2022-05-18 09:45:45.923+05:30	2022-05-18 09:45:45.923+05:30
+254	Maitri	6	\N	\N	2022-05-18 09:45:52.245+05:30	2022-05-18 09:45:52.245+05:30
+255	Maitri	8	\N	\N	2022-05-18 09:45:52.259+05:30	2022-05-18 09:45:52.259+05:30
+256	Maitri	5	\N	\N	2022-05-18 12:06:31.84+05:30	2022-05-18 12:06:31.84+05:30
+257	Maitri	7	\N	\N	2022-05-18 12:07:03.622+05:30	2022-05-18 12:07:03.622+05:30
+258	Maitri	7	\N	\N	2022-05-18 12:07:03.685+05:30	2022-05-18 12:07:03.685+05:30
+259	Maitri	7	\N	\N	2022-05-18 12:07:19.443+05:30	2022-05-18 12:07:19.443+05:30
+260	Maitri	6	\N	\N	2022-05-18 15:59:06.201+05:30	2022-05-18 15:59:06.201+05:30
+261	Maitri	1	\N	\N	2022-05-18 15:59:11.934+05:30	2022-05-18 15:59:11.934+05:30
+262	Maitri	6	\N	\N	2022-05-18 15:59:17.359+05:30	2022-05-18 15:59:17.359+05:30
+263	Maitri	5	\N	\N	2022-05-18 15:59:17.6+05:30	2022-05-18 15:59:17.6+05:30
+264	Maitri	7	\N	\N	2022-05-18 15:59:17.828+05:30	2022-05-18 15:59:17.828+05:30
+265	Maitri	4	\N	\N	2022-05-18 15:59:17.95+05:30	2022-05-18 15:59:17.95+05:30
+266	Maitri	3	\N	\N	2022-05-18 15:59:18.699+05:30	2022-05-18 15:59:18.699+05:30
+267	Maitri	8	\N	\N	2022-05-18 15:59:18.715+05:30	2022-05-18 15:59:18.715+05:30
+268	Maitri	2	\N	\N	2022-05-18 15:59:20.129+05:30	2022-05-18 15:59:20.129+05:30
+269	Maitri	1	\N	\N	2022-05-18 15:59:20.481+05:30	2022-05-18 15:59:20.481+05:30
+270	Maitri	6	\N	\N	2022-05-18 15:59:21.009+05:30	2022-05-18 15:59:21.009+05:30
+271	Maitri	5	\N	\N	2022-05-18 15:59:21.66+05:30	2022-05-18 15:59:21.66+05:30
+272	Maitri	7	\N	\N	2022-05-18 15:59:25.211+05:30	2022-05-18 15:59:25.211+05:30
+273	Maitri	4	\N	\N	2022-05-18 15:59:25.659+05:30	2022-05-18 15:59:25.659+05:30
+274	Maitri	3	\N	\N	2022-05-18 15:59:27.043+05:30	2022-05-18 15:59:27.043+05:30
+275	Maitri	8	\N	\N	2022-05-18 15:59:28.51+05:30	2022-05-18 15:59:28.51+05:30
+276	Maitri	8	\N	\N	2022-05-18 15:59:49.702+05:30	2022-05-18 15:59:49.702+05:30
+277	Maitri	8	\N	\N	2022-05-18 15:59:50.313+05:30	2022-05-18 15:59:50.313+05:30
+278	Maitri	8	\N	\N	2022-05-18 15:59:51.593+05:30	2022-05-18 15:59:51.593+05:30
+279	Maitri	8	\N	\N	2022-05-18 15:59:51.865+05:30	2022-05-18 15:59:51.865+05:30
+280	Maitri	5	\N	\N	2022-05-19 12:22:53.029+05:30	2022-05-19 12:22:53.029+05:30
+281	Maitri	5	\N	\N	2022-05-19 12:22:53.292+05:30	2022-05-19 12:22:53.292+05:30
+282	Maitri	5	\N	\N	2022-05-19 12:22:53.387+05:30	2022-05-19 12:22:53.387+05:30
+283	Maitri	5	\N	\N	2022-05-19 12:22:53.463+05:30	2022-05-19 12:22:53.463+05:30
+284	Maitri	5	\N	\N	2022-05-19 12:22:53.55+05:30	2022-05-19 12:22:53.55+05:30
+285	Maitri	5	\N	\N	2022-05-19 12:22:54.447+05:30	2022-05-19 12:22:54.447+05:30
+286	Maitri	4	\N	\N	2022-05-19 12:22:54.457+05:30	2022-05-19 12:22:54.457+05:30
+287	Maitri	4	\N	\N	2022-05-19 12:22:59.643+05:30	2022-05-19 12:22:59.643+05:30
+288	Maitri	7	\N	\N	2022-05-19 12:22:59.649+05:30	2022-05-19 12:22:59.649+05:30
+289	Maitri	7	\N	\N	2022-05-19 12:23:11.647+05:30	2022-05-19 12:23:11.647+05:30
+290	Maitri	5	\N	\N	2022-05-19 12:23:11.698+05:30	2022-05-19 12:23:11.698+05:30
+291	Maitri	5	\N	\N	2022-05-19 12:23:41.69+05:30	2022-05-19 12:23:41.69+05:30
+292	Maitri	5	\N	\N	2022-05-19 12:23:41.771+05:30	2022-05-19 12:23:41.771+05:30
+293	Maitri	5	\N	\N	2022-05-19 12:23:41.853+05:30	2022-05-19 12:23:41.853+05:30
+294	Maitri	5	\N	\N	2022-05-19 12:23:41.911+05:30	2022-05-19 12:23:41.911+05:30
+295	Maitri	5	\N	\N	2022-05-19 12:24:44.989+05:30	2022-05-19 12:24:44.989+05:30
+296	Maitri	5	\N	\N	2022-05-19 12:24:45.37+05:30	2022-05-19 12:24:45.37+05:30
+297	Maitri	5	\N	\N	2022-05-19 12:24:45.458+05:30	2022-05-19 12:24:45.458+05:30
+298	Maitri	5	\N	\N	2022-05-19 12:24:45.538+05:30	2022-05-19 12:24:45.538+05:30
+299	Maitri	5	\N	\N	2022-05-19 12:24:45.609+05:30	2022-05-19 12:24:45.609+05:30
+300	Maitri	5	\N	\N	2022-05-19 12:25:00.094+05:30	2022-05-19 12:25:00.094+05:30
+301	Maitri	4	\N	\N	2022-05-19 12:25:00.133+05:30	2022-05-19 12:25:00.133+05:30
+302	Maitri	4	\N	\N	2022-05-19 12:25:04.958+05:30	2022-05-19 12:25:04.958+05:30
+303	Maitri	7	\N	\N	2022-05-19 12:25:04.964+05:30	2022-05-19 12:25:04.964+05:30
+304	Maitri	7	\N	\N	2022-05-19 12:25:07.79+05:30	2022-05-19 12:25:07.79+05:30
+305	Maitri	7	\N	\N	2022-05-19 12:25:07.852+05:30	2022-05-19 12:25:07.852+05:30
+306	Maitri	7	\N	\N	2022-05-19 12:25:07.918+05:30	2022-05-19 12:25:07.918+05:30
+307	Maitri	7	\N	\N	2022-05-19 12:25:07.982+05:30	2022-05-19 12:25:07.982+05:30
+308	Maitri	7	\N	\N	2022-05-19 12:25:08.048+05:30	2022-05-19 12:25:08.048+05:30
+309	Maitri	1	\N	\N	2022-05-19 13:37:38.118+05:30	2022-05-19 13:37:38.118+05:30
+310	Maitri	1	\N	\N	2022-05-19 13:42:19.167+05:30	2022-05-19 13:42:19.167+05:30
+311	Maitri	3	\N	\N	2022-05-19 13:42:19.206+05:30	2022-05-19 13:42:19.206+05:30
+312	Maitri	3	\N	\N	2022-05-19 13:42:36.579+05:30	2022-05-19 13:42:36.579+05:30
+313	Maitri	5	\N	\N	2022-05-19 13:42:36.613+05:30	2022-05-19 13:42:36.613+05:30
+314	Maitri	5	\N	\N	2022-05-19 13:42:50.836+05:30	2022-05-19 13:42:50.836+05:30
+315	Maitri	7	\N	\N	2022-05-19 13:42:50.878+05:30	2022-05-19 13:42:50.878+05:30
+316	Maitri	7	\N	\N	2022-05-19 13:46:01.312+05:30	2022-05-19 13:46:01.312+05:30
+317	Maitri	8	\N	\N	2022-05-19 13:46:01.362+05:30	2022-05-19 13:46:01.362+05:30
+318	Maitri	2	\N	\N	2022-05-19 13:46:59.492+05:30	2022-05-19 13:46:59.492+05:30
+319	Maitri	1	\N	\N	2022-05-19 13:47:13.396+05:30	2022-05-19 13:47:13.396+05:30
+320	Maitri	6	\N	\N	2022-05-19 13:47:19.73+05:30	2022-05-19 13:47:19.73+05:30
+321	Maitri	5	\N	\N	2022-05-19 13:51:05.03+05:30	2022-05-19 13:51:05.03+05:30
+322	Maitri	5	\N	\N	2022-05-19 13:51:05.5+05:30	2022-05-19 13:51:05.5+05:30
+323	Maitri	5	\N	\N	2022-05-19 13:51:05.578+05:30	2022-05-19 13:51:05.578+05:30
+324	Maitri	5	\N	\N	2022-05-19 13:51:05.649+05:30	2022-05-19 13:51:05.649+05:30
+325	Maitri	5	\N	\N	2022-05-19 13:51:05.714+05:30	2022-05-19 13:51:05.714+05:30
+326	Maitri	5	\N	\N	2022-05-19 13:51:19.929+05:30	2022-05-19 13:51:19.929+05:30
+327	Maitri	5	\N	\N	2022-05-19 13:52:10.341+05:30	2022-05-19 13:52:10.341+05:30
+328	Maitri	5	\N	\N	2022-05-19 13:52:10.342+05:30	2022-05-19 13:52:10.342+05:30
+329	Maitri	5	\N	\N	2022-05-19 13:52:10.346+05:30	2022-05-19 13:52:10.346+05:30
+330	Maitri	5	\N	\N	2022-05-19 13:52:45.083+05:30	2022-05-19 13:52:45.083+05:30
+331	Maitri	5	\N	\N	2022-05-19 13:52:45.084+05:30	2022-05-19 13:52:45.084+05:30
+332	Maitri	5	\N	\N	2022-05-19 13:52:45.086+05:30	2022-05-19 13:52:45.086+05:30
+333	Maitri	5	\N	\N	2022-05-19 13:52:48.566+05:30	2022-05-19 13:52:48.566+05:30
+334	Maitri	5	\N	\N	2022-05-19 13:52:48.618+05:30	2022-05-19 13:52:48.618+05:30
+335	Maitri	5	\N	\N	2022-05-19 13:52:48.695+05:30	2022-05-19 13:52:48.695+05:30
+336	Maitri	5	\N	\N	2022-05-19 13:52:48.74+05:30	2022-05-19 13:52:48.74+05:30
+337	Maitri	5	\N	\N	2022-05-19 13:52:49.073+05:30	2022-05-19 13:52:49.073+05:30
+338	Maitri	5	\N	\N	2022-05-19 13:52:49.13+05:30	2022-05-19 13:52:49.13+05:30
+339	Maitri	5	\N	\N	2022-05-19 13:52:49.188+05:30	2022-05-19 13:52:49.188+05:30
+340	Maitri	5	\N	\N	2022-05-19 13:52:49.244+05:30	2022-05-19 13:52:49.244+05:30
+341	Maitri	5	\N	\N	2022-05-19 13:52:49.472+05:30	2022-05-19 13:52:49.472+05:30
+342	Maitri	5	\N	\N	2022-05-19 13:52:49.547+05:30	2022-05-19 13:52:49.547+05:30
+343	Maitri	5	\N	\N	2022-05-19 13:52:49.608+05:30	2022-05-19 13:52:49.608+05:30
+344	Maitri	5	\N	\N	2022-05-19 13:52:49.662+05:30	2022-05-19 13:52:49.662+05:30
+345	Maitri	5	\N	\N	2022-05-19 13:53:00.128+05:30	2022-05-19 13:53:00.128+05:30
+346	Maitri	5	\N	\N	2022-05-19 13:53:00.183+05:30	2022-05-19 13:53:00.183+05:30
+347	Maitri	5	\N	\N	2022-05-19 13:53:00.249+05:30	2022-05-19 13:53:00.249+05:30
+348	Maitri	5	\N	\N	2022-05-19 13:53:00.301+05:30	2022-05-19 13:53:00.301+05:30
+349	Maitri	5	\N	\N	2022-05-19 13:53:15.356+05:30	2022-05-19 13:53:15.356+05:30
+350	Maitri	5	\N	\N	2022-05-19 13:53:15.409+05:30	2022-05-19 13:53:15.409+05:30
+351	Maitri	5	\N	\N	2022-05-19 13:53:15.489+05:30	2022-05-19 13:53:15.489+05:30
+352	Maitri	5	\N	\N	2022-05-19 13:53:15.543+05:30	2022-05-19 13:53:15.543+05:30
+353	Maitri	5	\N	\N	2022-05-19 13:53:16.381+05:30	2022-05-19 13:53:16.381+05:30
+354	Maitri	5	\N	\N	2022-05-19 13:53:16.441+05:30	2022-05-19 13:53:16.441+05:30
+355	Maitri	5	\N	\N	2022-05-19 13:53:16.508+05:30	2022-05-19 13:53:16.508+05:30
+356	Maitri	5	\N	\N	2022-05-19 13:53:16.57+05:30	2022-05-19 13:53:16.57+05:30
+357	Maitri	5	\N	\N	2022-05-19 13:53:20.332+05:30	2022-05-19 13:53:20.332+05:30
+358	Maitri	5	\N	\N	2022-05-19 13:53:20.383+05:30	2022-05-19 13:53:20.383+05:30
+359	Maitri	5	\N	\N	2022-05-19 13:53:20.45+05:30	2022-05-19 13:53:20.45+05:30
+360	Maitri	5	\N	\N	2022-05-19 13:53:20.502+05:30	2022-05-19 13:53:20.502+05:30
+361	Maitri	5	\N	\N	2022-05-19 13:53:20.815+05:30	2022-05-19 13:53:20.815+05:30
+362	Maitri	5	\N	\N	2022-05-19 13:53:20.881+05:30	2022-05-19 13:53:20.881+05:30
+363	Maitri	5	\N	\N	2022-05-19 13:53:20.945+05:30	2022-05-19 13:53:20.945+05:30
+364	Maitri	5	\N	\N	2022-05-19 13:53:21.004+05:30	2022-05-19 13:53:21.004+05:30
+365	Maitri	5	\N	\N	2022-05-19 14:06:53.842+05:30	2022-05-19 14:06:53.842+05:30
+366	Maitri	5	\N	\N	2022-05-19 14:06:54.57+05:30	2022-05-19 14:06:54.57+05:30
+367	Maitri	5	\N	\N	2022-05-19 14:06:54.671+05:30	2022-05-19 14:06:54.671+05:30
+368	Maitri	5	\N	\N	2022-05-19 14:06:54.756+05:30	2022-05-19 14:06:54.756+05:30
+369	Maitri	5	\N	\N	2022-05-19 14:08:32.042+05:30	2022-05-19 14:08:32.042+05:30
+370	Maitri	5	\N	\N	2022-05-19 14:08:32.241+05:30	2022-05-19 14:08:32.241+05:30
+371	Maitri	5	\N	\N	2022-05-19 14:08:32.291+05:30	2022-05-19 14:08:32.291+05:30
+372	Maitri	5	\N	\N	2022-05-19 14:08:36.032+05:30	2022-05-19 14:08:36.032+05:30
+373	Maitri	5	\N	\N	2022-05-19 14:08:36.107+05:30	2022-05-19 14:08:36.107+05:30
+374	Maitri	5	\N	\N	2022-05-19 14:08:36.157+05:30	2022-05-19 14:08:36.157+05:30
+375	Maitri	5	\N	\N	2022-05-19 14:08:39.013+05:30	2022-05-19 14:08:39.013+05:30
+376	Maitri	5	\N	\N	2022-05-19 14:08:39.051+05:30	2022-05-19 14:08:39.051+05:30
+377	Maitri	5	\N	\N	2022-05-19 14:08:39.078+05:30	2022-05-19 14:08:39.078+05:30
+378	Maitri	5	\N	\N	2022-05-19 14:54:27.478+05:30	2022-05-19 14:54:27.478+05:30
+379	Maitri	5	\N	\N	2022-05-19 14:54:28.917+05:30	2022-05-19 14:54:28.917+05:30
+380	Maitri	5	\N	\N	2022-05-19 14:54:29.01+05:30	2022-05-19 14:54:29.01+05:30
+381	Maitri	5	\N	\N	2022-05-19 14:54:29.099+05:30	2022-05-19 14:54:29.099+05:30
+382	Maitri	4	\N	\N	2022-05-19 14:54:32.518+05:30	2022-05-19 14:54:32.518+05:30
+383	Maitri	3	\N	\N	2022-05-19 14:54:32.662+05:30	2022-05-19 14:54:32.662+05:30
+384	Maitri	8	\N	\N	2022-05-19 14:54:33.089+05:30	2022-05-19 14:54:33.089+05:30
+385	Maitri	2	\N	\N	2022-05-19 14:54:34.636+05:30	2022-05-19 14:54:34.636+05:30
+386	Maitri	7	\N	\N	2022-05-19 14:54:36.462+05:30	2022-05-19 14:54:36.462+05:30
+387	Maitri	1	\N	\N	2022-05-19 14:54:36.685+05:30	2022-05-19 14:54:36.685+05:30
+388	Maitri	6	\N	\N	2022-05-19 14:54:37.396+05:30	2022-05-19 14:54:37.396+05:30
+389	Maitri	5	\N	\N	2022-05-19 14:54:37.399+05:30	2022-05-19 14:54:37.399+05:30
+390	maitri.bhatt	7	\N	\N	2022-05-25 15:17:19.525+05:30	2022-05-25 15:17:19.525+05:30
+391	maitri.bhatt	7	\N	\N	2022-05-25 15:17:20.508+05:30	2022-05-25 15:17:20.508+05:30
+392	maitri.bhatt	7	\N	\N	2022-05-25 15:17:20.584+05:30	2022-05-25 15:17:20.584+05:30
+393	maitri.bhatt	7	\N	\N	2022-05-25 15:17:20.65+05:30	2022-05-25 15:17:20.65+05:30
+394	maitri.bhatt	7	\N	\N	2022-05-25 15:17:20.723+05:30	2022-05-25 15:17:20.723+05:30
+395	maitri.bhatt	7	\N	\N	2022-05-25 15:17:51.432+05:30	2022-05-25 15:17:51.432+05:30
+396	maitri.bhatt	7	\N	\N	2022-05-25 15:17:51.494+05:30	2022-05-25 15:17:51.494+05:30
+397	maitri.bhatt	7	\N	\N	2022-05-25 15:17:51.552+05:30	2022-05-25 15:17:51.552+05:30
+398	maitri.bhatt	7	\N	\N	2022-05-25 15:17:51.611+05:30	2022-05-25 15:17:51.611+05:30
+399	maitri.bhatt	7	\N	\N	2022-05-25 15:17:51.667+05:30	2022-05-25 15:17:51.667+05:30
+400	maitri.bhatt	7	\N	\N	2022-05-25 15:17:51.752+05:30	2022-05-25 15:17:51.752+05:30
+401	Maitri	1	\N	\N	2022-05-30 09:57:12.245+05:30	2022-05-30 09:57:12.245+05:30
+\.
+
+
+--
+-- Data for Name: user_playlist_details; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_playlist_details (id, user_playlist_id, song_id, is_active, "createdAt", "updatedAt") FROM stdin;
+1	\N	\N	t	2022-04-27 15:40:12.481+05:30	2022-04-27 15:40:12.481+05:30
+2	\N	\N	t	2022-04-27 15:41:33.144+05:30	2022-04-27 15:41:33.144+05:30
+3	12	\N	t	2022-04-27 15:44:01.412+05:30	2022-04-27 15:44:01.412+05:30
+4	12	2	t	2022-04-27 15:44:16.509+05:30	2022-04-27 15:44:16.509+05:30
+5	23	234	t	2022-04-27 16:25:45.421+05:30	2022-04-27 16:25:45.421+05:30
+13	51	1	t	2022-05-02 18:18:45.868+05:30	2022-05-02 18:18:45.868+05:30
+14	51	14	t	2022-05-02 18:18:56.342+05:30	2022-05-02 18:18:56.342+05:30
+15	51	13	t	2022-05-02 18:19:02.893+05:30	2022-05-02 18:19:02.893+05:30
+16	51	7	t	2022-05-02 18:19:07.999+05:30	2022-05-02 18:19:07.999+05:30
+17	48	2	t	2022-05-02 18:46:54.145+05:30	2022-05-02 18:46:54.145+05:30
+18	48	14	t	2022-05-02 18:48:01.353+05:30	2022-05-02 18:48:01.353+05:30
+19	48	5	t	2022-05-02 18:57:18.65+05:30	2022-05-02 18:57:18.65+05:30
+20	45	1	t	2022-05-02 19:08:16.516+05:30	2022-05-02 19:08:16.516+05:30
+21	52	3	t	2022-05-02 19:21:57.167+05:30	2022-05-02 19:21:57.167+05:30
+22	52	1	t	2022-05-02 19:22:14.103+05:30	2022-05-02 19:22:14.103+05:30
+23	53	8	t	2022-05-02 20:02:24.796+05:30	2022-05-02 20:02:24.796+05:30
+26	55	3	t	2022-05-04 19:48:33.43+05:30	2022-05-04 19:48:33.43+05:30
+30	56	1	t	2022-05-13 17:54:16.057+05:30	2022-05-13 17:54:16.057+05:30
+31	61	2	t	2022-05-13 18:18:29.839+05:30	2022-05-13 18:18:29.839+05:30
+34	63	5	t	2022-05-18 15:37:46.877+05:30	2022-05-18 15:37:46.877+05:30
+35	56	4	t	2022-05-20 18:06:13.035+05:30	2022-05-20 18:06:13.035+05:30
+\.
+
+
+--
+-- Data for Name: user_playlists; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_playlists (user_playlist_id, user_name, playlist_name, is_active, "createdAt", "updatedAt") FROM stdin;
+1	X	idontknow	\N	2022-04-22 18:51:17.305+05:30	2022-04-22 18:51:17.305+05:30
+2	X	bjkjkj	\N	2022-04-22 18:51:55.774+05:30	2022-04-22 18:51:55.774+05:30
+6	X3	no matter what	\N	2022-04-22 18:55:28.703+05:30	2022-04-22 18:55:28.703+05:30
+7	X3	pqr	\N	2022-04-22 18:55:42.077+05:30	2022-04-22 18:55:42.077+05:30
+3	X	asdf	\N	2022-04-22 18:52:10.732+05:30	2022-04-22 19:43:54.219+05:30
+4	X1	asdf	\N	2022-04-22 18:52:18.967+05:30	2022-04-22 19:45:26.259+05:30
+10	hp	top 10	\N	2022-04-25 15:55:49.89+05:30	2022-04-25 15:55:49.89+05:30
+11	hp	asdf	\N	2022-04-25 16:23:32.804+05:30	2022-04-25 16:23:32.804+05:30
+12	hp	asdef	\N	2022-04-25 16:26:08.161+05:30	2022-04-25 16:26:08.161+05:30
+13	hp	dasd	\N	2022-04-25 16:49:31.977+05:30	2022-04-25 16:49:31.977+05:30
+14	hp	wsdddwad	\N	2022-04-25 16:51:26.909+05:30	2022-04-25 16:51:26.909+05:30
+15	hp	vxvxvdxsv	\N	2022-04-25 16:53:07.49+05:30	2022-04-25 16:53:07.49+05:30
+16	hp	wadadw	\N	2022-04-25 16:54:39.89+05:30	2022-04-25 16:54:39.89+05:30
+17	hp	fsefsefffsf	\N	2022-04-25 16:55:45.307+05:30	2022-04-25 16:55:45.307+05:30
+18	hp	asdfqwer	\N	2022-04-25 16:56:09.095+05:30	2022-04-25 16:56:09.095+05:30
+19	hp	harshank	\N	2022-04-25 16:57:21.294+05:30	2022-04-25 16:57:21.294+05:30
+20	hp	ayushi	\N	2022-04-25 16:59:17.947+05:30	2022-04-25 16:59:17.947+05:30
+21	hp	jeet	\N	2022-04-25 17:00:58.948+05:30	2022-04-25 17:00:58.948+05:30
+22	hp	dfgdgdgdgdgfdfdfgd	\N	2022-04-25 17:03:55.049+05:30	2022-04-25 17:03:55.049+05:30
+23	hp	lp0kii[o9	\N	2022-04-25 17:06:03.293+05:30	2022-04-25 17:06:03.293+05:30
+24	hp	ssdsadsds	\N	2022-04-25 17:07:04.237+05:30	2022-04-25 17:07:04.237+05:30
+25	hp	dsdadadasadsa	\N	2022-04-25 17:11:02.302+05:30	2022-04-25 17:11:02.302+05:30
+26	hp	sdasdadsadd	\N	2022-04-25 17:11:47.19+05:30	2022-04-25 17:11:47.19+05:30
+27	hp	dsadsadasdsadsad	\N	2022-04-25 17:12:45.177+05:30	2022-04-25 17:12:45.177+05:30
+28	hp	qwer	\N	2022-04-25 17:13:39.572+05:30	2022-04-25 17:13:39.572+05:30
+29	hp	axder	\N	2022-04-25 17:18:07.738+05:30	2022-04-25 17:18:07.738+05:30
+30	hp	maitri	\N	2022-04-26 14:05:26.766+05:30	2022-04-26 14:05:26.766+05:30
+31	hp	ktyut	\N	2022-04-26 16:29:27.442+05:30	2022-04-26 16:29:27.442+05:30
+32	hp	xyzz	\N	2022-04-26 18:04:39.607+05:30	2022-04-26 18:04:39.607+05:30
+33	hp	cc	\N	2022-04-27 13:49:23.429+05:30	2022-04-27 13:49:23.429+05:30
+34	hp	xvxdvxv xdv	\N	2022-04-27 14:05:52.279+05:30	2022-04-27 14:05:52.279+05:30
+35	hp	rames	\N	2022-04-27 14:46:52.941+05:30	2022-04-27 14:46:52.941+05:30
+36	hp	teerth	\N	2022-04-27 15:56:55.001+05:30	2022-04-27 15:56:55.001+05:30
+37	hp	dadsadsdas	\N	2022-04-27 16:26:37.962+05:30	2022-04-27 16:26:37.962+05:30
+38	vivek.rajyaguru	My Fav	\N	2022-04-29 17:27:05.941+05:30	2022-04-29 17:27:05.941+05:30
+39	vivek.rajyaguru	vivek	\N	2022-04-29 18:03:25.633+05:30	2022-04-29 18:03:25.633+05:30
+40	vtt	harshank	\N	2022-05-02 11:04:18.287+05:30	2022-05-02 11:04:18.287+05:30
+43	vtt	dfdff	\N	2022-05-02 11:14:01.359+05:30	2022-05-02 11:14:01.359+05:30
+44	vtt	dfdff	\N	2022-05-02 11:14:00.942+05:30	2022-05-02 11:14:00.942+05:30
+45	vtt	dfdff	\N	2022-05-02 11:14:01.156+05:30	2022-05-02 11:14:01.156+05:30
+42	vtt	dfdff	\N	2022-05-02 11:14:00.327+05:30	2022-05-02 11:14:00.327+05:30
+41	vtt	dfdff	\N	2022-05-02 11:13:59.527+05:30	2022-05-02 11:13:59.527+05:30
+46	vivek.rajyaguru	maitri	\N	2022-05-02 11:30:27.701+05:30	2022-05-02 11:30:27.701+05:30
+47	vivek.rajyaguru	maitri	\N	2022-05-02 11:30:28.467+05:30	2022-05-02 11:30:28.467+05:30
+48	vtt	ss	\N	2022-05-02 11:37:28.98+05:30	2022-05-02 11:37:28.98+05:30
+49	harshu	hansu	\N	2022-05-02 11:45:19.922+05:30	2022-05-02 11:45:19.922+05:30
+50	Maitri	maitri	\N	2022-05-02 14:29:52.471+05:30	2022-05-02 14:29:52.471+05:30
+51	vtt	Lofi songs	\N	2022-05-02 18:18:33.974+05:30	2022-05-02 18:18:33.974+05:30
+52	vtt	asdf	\N	2022-05-02 19:21:47.271+05:30	2022-05-02 19:21:47.271+05:30
+53	vtt	jeet2	\N	2022-05-02 20:02:14.52+05:30	2022-05-02 20:02:14.52+05:30
+54	pranjal@2021	pranjal	\N	2022-05-03 09:44:24.926+05:30	2022-05-03 09:44:24.926+05:30
+55	test123	sdf	\N	2022-05-04 19:47:21.413+05:30	2022-05-04 19:47:21.413+05:30
+56	vt	daa	\N	2022-05-11 12:49:08.166+05:30	2022-05-11 12:49:08.166+05:30
+57	Maitri	abc	\N	2022-05-12 14:57:58.416+05:30	2022-05-12 14:57:58.416+05:30
+58	vt23	hansu	\N	2022-05-12 16:33:04.418+05:30	2022-05-12 16:33:04.418+05:30
+59	vt23	harshank	\N	2022-05-12 16:33:30.671+05:30	2022-05-12 16:33:30.671+05:30
+60	vt	sfsdfsfsdf	\N	2022-05-13 17:53:28.398+05:30	2022-05-13 17:53:28.398+05:30
+61	vt	jlk;k	\N	2022-05-13 18:18:11.734+05:30	2022-05-13 18:18:11.734+05:30
+62	vt	esefef	\N	2022-05-17 18:35:39.981+05:30	2022-05-17 18:35:39.981+05:30
+63	vt	sdffgs	\N	2022-05-18 15:37:39.948+05:30	2022-05-18 15:37:39.948+05:30
+64	vt	fggfg	\N	2022-05-23 19:48:53.315+05:30	2022-05-23 19:48:53.315+05:30
+\.
+
+
+--
+-- Data for Name: user_subscriptions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_subscriptions (id, user_name, start_date, end_date, "createdAt", "updatedAt") FROM stdin;
+83	tp	2022-05-30	2022-07-30	2022-05-30 14:24:42.507+05:30	2022-05-30 14:24:42.507+05:30
+\.
+
+
+--
+-- Data for Name: user_tokens; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_tokens (id, email, token, "createdAt", "updatedAt") FROM stdin;
+1	pranjal.desai@volansys.com	730305	2022-05-19 11:57:59.003+05:30	2022-05-19 11:57:59.003+05:30
+2	pranjal.desai@volansys.com	171913	2022-05-19 11:58:26.583+05:30	2022-05-19 11:58:26.583+05:30
+3	pranjal.desai@volansys.com	652965	2022-05-19 12:17:00.546+05:30	2022-05-19 12:17:00.546+05:30
+4	pranjal.desai@volansys.com	514195	2022-05-19 12:20:30.987+05:30	2022-05-19 12:20:30.987+05:30
+5	pranjal.desai@volansys.com	103134	2022-05-19 12:27:02.808+05:30	2022-05-19 12:27:02.808+05:30
+6	pranjal.desai@volansys.com	583065	2022-05-24 15:19:57.732+05:30	2022-05-24 15:19:57.732+05:30
+7	pranjal.desai@volansys.com	308539	2022-05-24 15:32:40.32+05:30	2022-05-24 15:32:40.32+05:30
+8	pranjal.desai@volansys.com	925360	2022-05-25 15:25:06.007+05:30	2022-05-25 15:25:06.007+05:30
+9	pranjal.desai@volansys.com	773393	2022-06-01 18:30:20.929+05:30	2022-06-01 18:30:20.929+05:30
+10	pranjal.desai@volansys.com	505276	2022-06-01 18:31:19.98+05:30	2022-06-01 18:31:19.98+05:30
+11	pranjal.desai@volansys.com	506301	2022-06-01 18:32:10.685+05:30	2022-06-01 18:32:10.685+05:30
+\.
+
+
+--
+-- Data for Name: userpodcasts; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.userpodcasts (id, user_name, podcast_name, path, "createdAt", "updatedAt") FROM stdin;
+1	vt	dsdsdads	files/userpodcast/1653373939test.mp3	2022-05-24 12:02:19.299+05:30	2022-05-24 12:02:19.299+05:30
+2	vt	ddadawdad	files/userpodcast/1653374053test.mp3	2022-05-24 12:04:13.848+05:30	2022-05-24 12:04:13.848+05:30
+3	vt	karan birthday	files/userpodcast/1653376746test.mp3	2022-05-24 12:49:06.913+05:30	2022-05-24 12:49:06.913+05:30
+4	vt	kinjal	files/userpodcast/1653385071test.mp3	2022-05-24 15:07:51.759+05:30	2022-05-24 15:07:51.759+05:30
+5	vt	tirth	files/userpodcast/1653390462test.mp3	2022-05-24 16:37:42.72+05:30	2022-05-24 16:37:42.72+05:30
+6	vt	jeetd	files/userpodcast/1653390535test.mp3	2022-05-24 16:38:55.021+05:30	2022-05-24 16:38:55.021+05:30
+7	vt	maitri	files/userpodcast/1653542502test.mp3	2022-05-26 10:51:42.645+05:30	2022-05-26 10:51:42.645+05:30
+8	vt	szc	files/userpodcast/1654094497test.mp3	2022-06-01 20:11:37.335+05:30	2022-06-01 20:11:37.335+05:30
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users (id, user_name, first_name, last_name, email, password, contact_num, profile_pic, is_active, "createdAt", "updatedAt") FROM stdin;
+63	vivek.rajyaguru	vivek	rajyaguru	vivek.rajyaguru@volansys.com	$2b$10$LrzNcaXCcSjAHWt9p7jJa.dINS.9DYjLGIZp9TCoEgbINXeQPyJ9m	123456789	\N	t	2022-04-29 15:29:52.308+05:30	2022-04-29 15:29:52.308+05:30
+64	tp	teerth	patel	tbpatel1089@gmail.com	$2b$10$dSp6I1WNPwQ5bpXX6xCu7.M5tj3CPg7fORsBkG8x7v.ZIpTaRGbqC	7874570795	\N	t	2022-04-29 15:40:52.882+05:30	2022-04-29 15:40:52.882+05:30
+65	hp	harshank	sfsf	harshank@gmail.com	$2b$10$MSN/zaoRPuMubdb0capiGOb3dAaQDLGMGpTi0/VcVtKrY35xYAxE6	1234567890	\N	t	2022-05-02 10:59:11.458+05:30	2022-05-02 10:59:11.458+05:30
+87	harshu	hgdhf	haskdh	harsdawdahank@gmail.com	$2b$10$8BlTFY4m9z3VV.hRLd3Zc.yGYmxMg6F14JQapLaWyJeBJ.eZIrD8S	1234567890	\N	t	2022-05-02 11:44:58.316+05:30	2022-05-02 11:44:58.316+05:30
+88	maitri.bhatt	Maitri	Bhatt	maitri.bhatt@volansys.com	$2b$10$MPTN0Jkq0ne6Q8K91zGwCeBgNizOdsPXqGrJtCkiJ2/NcvHQ07IPq	987654321	\N	t	2022-05-02 14:22:02.151+05:30	2022-05-02 14:22:02.151+05:30
+89	Maitri	Maitri	Bhatt	maitri.bhatt123@volansys.com	$2b$10$nK6OTz4Taxsumgc442A6Eeu5nqdKiBbd0xTZ6qdYDh/yubFaqT2wm	9876543210	\N	t	2022-05-02 14:28:39.882+05:30	2022-05-02 14:28:39.882+05:30
+90	pranjal@2021	Pranjal	Desai	pranjal.desai@volansys.com	$2b$10$JYyeg1luZNaZrE14GU0XGuDfhYjSIomGg4LoOz8AUj02JHKEl5tI.	1234567890	\N	t	2022-05-03 09:43:33.02+05:30	2022-05-03 09:43:33.02+05:30
+93	teerth	teerth	patel	teerth@gmail.com	Teerth@123	7874570795	\N	t	2022-05-10 12:40:54.33+05:30	2022-05-10 12:40:54.33+05:30
+95	teerth123	teerth	patel	teert34h@gmail.com	$2b$10$noMdvqT8sMR8GSHFFa59t.tOTGnxig0ELJHxNfQSV4JOAWsiHvMVO	7874570795	\N	t	2022-05-10 12:42:15.015+05:30	2022-05-10 12:42:15.015+05:30
+97	vt	vt1234	dnadjl	sdjkaskjfhajdhajkd@gmail.com	$2b$10$9jMVquh5MSb7gzNK6tKQV.cKSHLUUApw1R6.7GAfXg4CyocHiZp.a	12	\N	t	2022-05-11 12:48:44.249+05:30	2022-05-11 12:48:44.249+05:30
+98	mt	jhwad	kya fayda	neveruse@gmail.com	$2b$10$5qKnAhZ61uQoQ4xrO881suwyR9L70lcxGY.yDVfrB5k3fybRnH6TO	1234567890	\N	t	2022-05-11 19:07:57.05+05:30	2022-05-11 19:07:57.05+05:30
+99	mt1	jhwad	kya fayda	neveruwse@gmail.com	$2b$10$Lpd6D34cg7Rgs.FexZxSBO.3v85PLNe3vIzt4XrqSTUABHDnJajTi	1234567890	\N	t	2022-05-12 10:46:50.332+05:30	2022-05-12 10:46:50.332+05:30
+100	vt23	wdawd	dwadad	dawdawdaddad@gmail.com	$2b$10$bc.SxnicofjVp9bYXJ/L6.6JpJO7mW45v56HPHxrBkSbORVQ.xzhS	1234567890	\N	t	2022-05-12 16:31:57.324+05:30	2022-05-12 16:31:57.324+05:30
+125	qwe	qwe	asd	q@gmail.com	$2b$10$rAKXImppO2Wkl5mJU37Uo.e0uBEBWyqr.EqBoZH6t/GNtu.WWWKB6	1234567890	\N	t	2022-05-17 17:15:28.383+05:30	2022-05-17 17:15:28.383+05:30
+126	tttt	tttt	tttt	t@g.com	$2b$10$84na3qKTMwX2gP1oqFgVb..SrW5ert8mnrXMk8I5tX3aVI9VOzgxe	7874570795	\N	t	2022-05-23 17:39:22.851+05:30	2022-05-23 17:39:22.851+05:30
+127	HarshankTp	abcd	abcd	hahansk.patyw@gmail.com	$2b$10$JMdgvCoalCjWCg.59ZRe5uhXas/zm3BSjV15VKxOrsV/qdrPxSeQ6	1234567890	\N	t	2022-06-01 20:01:09.321+05:30	2022-06-01 20:01:09.321+05:30
+\.
+
+
+--
+-- Name: album_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.album_details_id_seq', 16, true);
+
+
+--
+-- Name: albums_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.albums_id_seq', 42, true);
+
+
+--
+-- Name: genres_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.genres_id_seq', 1, false);
+
+
+--
+-- Name: playlist_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.playlist_details_id_seq', 13, true);
+
+
+--
+-- Name: playlists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.playlists_id_seq', 27, true);
+
+
+--
+-- Name: podcasts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.podcasts_id_seq', 1, true);
+
+
+--
+-- Name: song_qualities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.song_qualities_id_seq', 1, false);
+
+
+--
+-- Name: songs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.songs_id_seq', 11, true);
+
+
+--
+-- Name: user_favorites_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_favorites_id_seq', 170, true);
+
+
+--
+-- Name: user_histories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_histories_id_seq', 401, true);
+
+
+--
+-- Name: user_playlist_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_playlist_details_id_seq', 35, true);
+
+
+--
+-- Name: user_playlists_user_playlist_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_playlists_user_playlist_id_seq', 64, true);
+
+
+--
+-- Name: user_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_subscriptions_id_seq', 83, true);
+
+
+--
+-- Name: user_tokens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_tokens_id_seq', 11, true);
+
+
+--
+-- Name: userpodcasts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.userpodcasts_id_seq', 8, true);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 127, true);
+
+
+--
+-- Name: album_details album_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.album_details
+    ADD CONSTRAINT album_details_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: albums albums_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.albums
+    ADD CONSTRAINT albums_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: genres genres_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.genres
+    ADD CONSTRAINT genres_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: playlist_details playlist_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.playlist_details
+    ADD CONSTRAINT playlist_details_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: playlists playlists_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.playlists
+    ADD CONSTRAINT playlists_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: podcasts podcasts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.podcasts
+    ADD CONSTRAINT podcasts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: song_qualities song_qualities_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.song_qualities
+    ADD CONSTRAINT song_qualities_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: songs songs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.songs
+    ADD CONSTRAINT songs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_favorites user_favorites_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_favorites
+    ADD CONSTRAINT user_favorites_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_histories user_histories_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_histories
+    ADD CONSTRAINT user_histories_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_playlist_details user_playlist_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_playlist_details
+    ADD CONSTRAINT user_playlist_details_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_playlists user_playlists_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_playlists
+    ADD CONSTRAINT user_playlists_pkey PRIMARY KEY (user_playlist_id);
+
+
+--
+-- Name: user_subscriptions user_subscriptions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_subscriptions
+    ADD CONSTRAINT user_subscriptions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_tokens user_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_tokens
+    ADD CONSTRAINT user_tokens_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: userpodcasts userpodcasts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.userpodcasts
+    ADD CONSTRAINT userpodcasts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users users_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_email_key UNIQUE (email);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users users_user_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_user_name_key UNIQUE (user_name);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
